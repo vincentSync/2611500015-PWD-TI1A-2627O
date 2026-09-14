@@ -1,5 +1,6 @@
 # pertemuan-01
 1. Konsep Dasar Pemrograman Web
+ricky
    
 2. Arsitektur Klien-Peladen
    
