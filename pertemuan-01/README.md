@@ -1,14 +1,13 @@
 # pertemuan-01
 # Pemrograman Web Dasar
 
-Nama: [Vincent Surya Julianto]
+Nama: Vincent Surya Julianto
 
-NIM: [2611500015]
+NIM: 2611500015
 
-Kelompok: [TI1A]
+Kelompok: TI1A
 
 Tahun Ajaran: 2026/2027 Gasal
-
 
 
 1. Konsep Dasar Pemrograman Web
