@@ -1,2 +1,7 @@
-# 2611500015-PWD-TI1A-2627O
-Repository Latihan Pertemuan-1 sampai dengan Pertemuan-16 Matakuliah Pemrograman Web Dasar Kelompok TI1A Tahun Ajaran 2026/2027 Semester Gasal
+# Pemrograman Web Dasar
+Nama: Vincent Surya Julianto
+NIM: 2611500015
+Kelompok: TI1A
+Tahun Ajaran: 2026/2027 Gasal
+
+Repository ini digunakan untuk mendokumentasikan perkembangan pembelajaran mata kuliah Pemrograman Web Dasar dari Pertemuan 1 sampai dengan Pertemuan 16.
