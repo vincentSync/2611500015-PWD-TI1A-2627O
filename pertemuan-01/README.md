@@ -29,5 +29,3 @@ Tahun Ajaran: 2026/2027 Gasal
 5. Hubungan Antarteknologi
 
    HTML-CSS-JS jalan di browser, PHP-MySQL jalan di server, saling kirim data lewat HTTP.
-
-123
