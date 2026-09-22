@@ -17,4 +17,4 @@ elemen semantik, teks, daftar, tautan, dan gambar.
 - Hasil validasi akhir: [tuliskan hasil]
 
 ## GitHub Pages
-URL: [tempel URL halaman P2]
+URL: https://vincentsync.github.io/2611500015-PWD-TI1A-2627O/pertemuan-02/
