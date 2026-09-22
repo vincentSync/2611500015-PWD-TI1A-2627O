@@ -12,9 +12,9 @@ elemen semantik, teks, daftar, tautan, dan gambar.
 
 ## Validasi HTML
 - Berkas yang divalidasi: `index.html`
-- Galat yang ditemukan: [tuliskan jika ada]
-- Perbaikan yang dilakukan: [tuliskan]
-- Hasil validasi akhir: [tuliskan hasil]
+- Galat yang ditemukan: menemukan 5 galat setelah melakukan validasi, semuanya berasal dari tanda kutip penutup yang hilang pada atribut `src` di elemen `img`.
+- Perbaikan yang dilakukan: menambahkan tanda kutip penutup yang hilang, lalu memvalidasi ulang.
+- Hasil validasi akhir: Document checking completed. No errors or warnings to show.
 
 ## GitHub Pages
 URL: https://vincentsync.github.io/2611500015-PWD-TI1A-2627O/pertemuan-02/
