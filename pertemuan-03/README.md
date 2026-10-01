@@ -14,7 +14,7 @@
 ## Pengujian GET dan POST
 
 - Hasil pengujian GET: data formulir muncul di URL setelah tombol kirim diklik.
-- Contoh URL encoding yang ditemukan: [https://vincentsync.github.io/2611500015-PWD-TI1A-2627O/pertemuan-03/index.html?nama=Vincent+Surya+Julianto&email=2611500015%40mahasiswa.atmaluhur.ac.id&semester=1&tanggal=2026-09-28&jenis_pesan=saran&minat=HTML&minat=CSS&prodi=TI&pesan=ok]. Spasi menjadi + dan @ menjadi %40.
+- Contoh URL encoding yang ditemukan: https://vincentsync.github.io/2611500015-PWD-TI1A-2627O/pertemuan-03/index.html?nama=Vincent+Surya+Julianto&email=2611500015%40mahasiswa.atmaluhur.ac.id&semester=1&tanggal=2026-09-28&jenis_pesan=saran&minat=HTML&minat=CSS&prodi=TI&pesan=ok. Spasi menjadi +, @ menjadi %40, dan checkbox yang dicentang lebih dari satu (HTML dan CSS) muncul sebagai dua pasangan minat=HTML&minat=CSS pada URL.
 - Hasil pengujian POST: data tidak muncul di URL dan halaman menampilkan 405 Not Allowed karena GitHub Pages tidak punya pemrosesan di sisi server.
 
 ## CSS Dasar
