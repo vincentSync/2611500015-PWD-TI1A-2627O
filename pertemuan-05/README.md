@@ -14,6 +14,8 @@ event listener, interaksi navigasi, dan validasi formulir sisi klien.
   pertemuan-05/ dan menambahkan `<script src="script.js"></script>` sebelum
   tag penutup `</body>` pada index.html. script.js dibiarkan kosong setelah
   kode pengujian sementara dihapus.
+- Menambahkan elemen umpan balik: menambahkan `<p id="formFeedback"></p>` di
+  dalam form pada index.html sebagai tempat pesan hasil validasi.
 
 ## Pengujian
 
@@ -23,6 +25,21 @@ event listener, interaksi navigasi, dan validasi formulir sisi klien.
 dijalankan.");`, pesan tersebut muncul di tab Console. Setelah baris itu
   dihapus dan halaman dimuat ulang, Console tidak menampilkan galat baru dan
   tampilan halaman tidak berubah.
+- F.2 getElementById (Console): id `nama`, `email`, `semester`, dan `contact`
+  menghasilkan elemen yang sesuai. id `navToggle`, `navMenu`, dan `contactForm`
+  menghasilkan `null` karena elemennya belum ditambahkan di index.html.
+  Hasil `getElementById("nama")` juga berhasil disimpan ke variabel `namaInput`.
+- F.3 querySelector (Console): `#nama`, `.input-form` (hanya elemen pertama),
+  `h1`, dan `#contact` ditemukan. Selector
+  `input[name="jenis_pesan"]:checked` menghasilkan `null` sebelum radio
+  dipilih dan menghasilkan radio `saran` setelah dipilih.
+- F.4 querySelectorAll (Console): jumlah checkbox minat yang terpilih adalah 0
+  saat kosong, 1 saat HTML dicentang, dan 2 saat HTML dan CSS dicentang.
+- F.5 value (Console): kolom kosong menghasilkan string kosong; setelah diisi,
+  value sesuai isian, dan semester terbaca sebagai teks.
+- F.6 textContent (Console): `formFeedback` ditemukan; teks dapat diubah dan
+  dihapus melalui `textContent`.
+- Masalah yang ditemukan: tidak ada.
 
 ## Riwayat Pengembangan
 
@@ -30,3 +47,5 @@ dijalankan.");`, pesan tersebut muncul di tab Console. Setelah baris itu
   hasilnya sesuai.
 - Hubungkan JavaScript eksternal ke HTML: menambahkan script.js dan tag
   `<script src>` di index.html, hubungan berhasil diverifikasi lewat Console.
+- Tambah elemen formFeedback: elemen ditambahkan di index.html dan diuji lewat
+  Console.
