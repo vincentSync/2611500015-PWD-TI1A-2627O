@@ -8,9 +8,21 @@
   </head>
   <body>
     <header>
-      <h1>Profil Mahasiswa</h1>
+      <div class="header-top">
+        <h1>Profil Mahasiswa</h1>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Buka navigasi"
+          aria-controls="navMenu"
+          aria-expanded="false"
+        >
+          &#9776;
+        </button>
+      </div>
       <nav>
-        <ul>
+        <ul id="navMenu">
           <li><a href="#home">Beranda</a></li>
           <li><a href="#about">Tentang</a></li>
           <li><a href="#contact">Kontak</a></li>
@@ -53,7 +65,7 @@
           <a href="https://github.com/vincentSync">profil Github saya</a>.
         </p>
 
-        <form action="index.html" method="get">
+        <form id="contactForm" action="index.html" method="get" novalidate>
           <div class="form-group">
             <label for="nama">Nama Lengkap</label><br />
             <input

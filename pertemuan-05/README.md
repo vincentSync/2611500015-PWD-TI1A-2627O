@@ -16,6 +16,7 @@ event listener, interaksi navigasi, dan validasi formulir sisi klien.
   kode pengujian sementara dihapus.
 - Menambahkan elemen umpan balik: menambahkan `<p id="formFeedback"></p>` di
   dalam form pada index.html sebagai tempat pesan hasil validasi.
+- Menyiapkan form untuk event submit: menambahkan id="contactForm" dan atribut novalidate pada tag form di index.html, serta menambahkan listener submit di script.js.
 
 ## Pengujian
 
@@ -40,6 +41,10 @@ dijalankan.");`, pesan tersebut muncul di tab Console. Setelah baris itu
 - F.6 textContent (Console): `formFeedback` ditemukan; teks dapat diubah dan
   dihapus melalui `textContent`.
 - Masalah yang ditemukan: tidak ada.
+- F.7 classList (Console): add, remove, contains, dan toggle diuji pada elemen #home dengan class latihan. toggle mengembalikan true saat class ditambahkan dan false saat dihapus. Pengujian pada navMenu dilakukan di bagian H setelah elemennya tersedia.
+- G.2 addEventListener: kode percobaan sementara pada elemen h1 di script.js. Saat judul diklik, pesan "Judul diklik." muncul di Console pada setiap klik. Kode percobaan dihapus setelah pengujian karena listener final dipasang pada navToggle dan contactForm pada bagian berikutnya.
+- G.3 event click: kode percobaan sementara pada foto profil di script.js. Setiap klik mencetak pesan dan jumlah klik di Console. Kode percobaan dihapus setelah pengujian karena listener click final dipasang pada navToggle di bagian H.
+- G.4 event submit: saat tombol Kirim diklik, pesan "Form dikirim." muncul di Console. Halaman memuat ulang setelahnya karena preventDefault belum dipasang.
 
 ## Riwayat Pengembangan
 
@@ -49,3 +54,4 @@ dijalankan.");`, pesan tersebut muncul di tab Console. Setelah baris itu
   `<script src>` di index.html, hubungan berhasil diverifikasi lewat Console.
 - Tambah elemen formFeedback: elemen ditambahkan di index.html dan diuji lewat
   Console.
+- Tambahkan penanganan event submit: id contactForm dan novalidate ditambahkan, event submit berhasil teramati lewat Console.
