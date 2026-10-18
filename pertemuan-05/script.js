@@ -2,6 +2,7 @@ const contactForm = document.getElementById("contactForm");
 const formFeedback = document.getElementById("formFeedback");
 
 contactForm.addEventListener("submit", (event) => {
+  event.preventDefault();
   console.log("Form dikirim.");
 });
 

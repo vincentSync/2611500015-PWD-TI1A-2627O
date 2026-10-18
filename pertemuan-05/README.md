@@ -19,6 +19,7 @@ event listener, interaksi navigasi, dan validasi formulir sisi klien.
 - Menyiapkan form untuk event submit: menambahkan id="contactForm" dan atribut novalidate pada tag form di index.html, serta menambahkan listener submit di script.js.
 - Menambahkan penanganan event input: listener input pada contactForm di script.js yang mengosongkan formFeedback saat pengguna mengubah isian form.
 - Menambahkan penanganan event reset: listener reset pada contactForm di script.js yang mengosongkan formFeedback saat tombol Batal diklik.
+- Menerapkan pencegahan submit bawaan: event.preventDefault() ditambahkan di awal listener submit pada script.js agar halaman tidak refresh atau berpindah saat form dikirim. Validasi pada P5 berjalan di sisi klien dan belum mengirim atau menyimpan data ke server.
 
 ## Pengujian
 
@@ -49,6 +50,8 @@ dijalankan.");`, pesan tersebut muncul di tab Console. Setelah baris itu
 - G.4 event submit: saat tombol Kirim diklik, pesan "Form dikirim." muncul di Console. Halaman memuat ulang setelahnya karena preventDefault belum dipasang.
 - G.5 event input: pesan pengujian dimunculkan manual lewat Console. Setelah salah satu isian diubah, pesan hilang dari formFeedback. Diulang pada beberapa kolom.
 - G.6 event reset: pesan pengujian dimunculkan manual lewat Console, isian form diisi, lalu tombol Batal diklik. Isian kembali kosong dan pesan di formFeedback hilang.
+- G.7 event object: console.log(event) sementara pada listener submit. Console menampilkan SubmitEvent dengan type "submit" dan target form#contactForm. Kode dikembalikan seperti semula setelah pengamatan.
+- G.8 preventDefault: tombol Kirim diklik. Pesan "Form dikirim." tetap tampil di Console, halaman tidak refresh, dan URL tidak berubah. Pengujian pesan validasi dilakukan setelah validasi dibuat di bagian I.
 
 ## Riwayat Pengembangan
 
@@ -61,3 +64,4 @@ dijalankan.");`, pesan tersebut muncul di tab Console. Setelah baris itu
 - Tambahkan penanganan event submit: id contactForm dan novalidate ditambahkan, event submit berhasil teramati lewat Console.
 - Tambahkan penanganan event input: listener input ditambahkan dan pesan umpan balik terhapus saat isian diubah.
 - Tambahkan penanganan event reset: listener reset ditambahkan dan pesan umpan balik terhapus saat form di-reset.
+- Terapkan pencegahan submit bawaan peramban: preventDefault ditambahkan pada listener submit, halaman tidak lagi refresh saat form dikirim.
