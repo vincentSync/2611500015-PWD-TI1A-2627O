@@ -1,6 +1,10 @@
 const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
 
+navToggle.addEventListener("click", () => {
+  const isOpen = navMenu.classList.toggle("nav-open");
+});
+
 const contactForm = document.getElementById("contactForm");
 const formFeedback = document.getElementById("formFeedback");
 

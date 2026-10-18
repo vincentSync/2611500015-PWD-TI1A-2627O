@@ -18,8 +18,34 @@ header {
   border: 1px solid #00264d;
 }
 header h1 {
-  margin: 0 0 16px;
+  margin: 0;
   font-size: 28px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-toggle {
+  display: block;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#navMenu {
+  display: none;
+}
+
+#navMenu.nav-open {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
 }
 
 nav ul {
@@ -169,11 +195,24 @@ footer p {
     grid-template-columns: 1fr 1fr;
   }
 
+  nav {
+    margin-top: 16px;
+  }
+
   nav ul {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     gap: 16px;
+  }
+
+  #navMenu {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-toggle {
+    display: none;
   }
 
   #contact {
