@@ -2,122 +2,108 @@
 
 ## Deskripsi
 
-Dokumentasi pengembangan halaman web pada P5, meliputi JavaScript, DOM,
-event listener, interaksi navigasi, dan validasi formulir sisi klien.
+Halaman profil dari P4 saya kembangkan di folder pertemuan-05/ supaya bisa
+merespons pengguna dengan JavaScript. Ada dua fitur utama: menu navigasi yang
+bisa dibuka dan ditutup di layar kecil, serta validasi formulir kontak.
+Validasi hanya berjalan di browser. Data belum dikirim atau disimpan ke server.
 
 ## Fitur dan Pengembangan
 
-- Penyiapan baseline: menyalin index.html, style.css, dan img/foto-profil.jpg
-  dari P4 ke folder pertemuan-05/. Belum ada JavaScript.
-- Cara menjalankan: buka pertemuan-05/index.html di browser.
-- Menghubungkan JavaScript eksternal: membuat berkas script.js di
-  pertemuan-05/ dan menambahkan `<script src="script.js"></script>` sebelum
-  tag penutup `</body>` pada index.html. script.js dibiarkan kosong setelah
-  kode pengujian sementara dihapus.
-- Menambahkan elemen umpan balik: menambahkan `<p id="formFeedback"></p>` di
-  dalam form pada index.html sebagai tempat pesan hasil validasi.
-- Menyiapkan form untuk event submit: menambahkan id="contactForm" dan atribut
-  novalidate pada tag form di index.html, serta menambahkan listener submit di
-  script.js.
-- Menambahkan penanganan event input: listener input pada contactForm di
-  script.js yang mengosongkan formFeedback saat pengguna mengubah isian form.
-- Menambahkan penanganan event reset: listener reset pada contactForm di
-  script.js yang mengosongkan formFeedback saat tombol Batal diklik.
-- Menerapkan pencegahan submit bawaan: event.preventDefault() ditambahkan di
-  awal listener submit pada script.js agar halaman tidak refresh atau
-  berpindah saat form dikirim. Validasi pada P5 berjalan di sisi klien dan
-  belum mengirim atau menyimpan data ke server.
-- Menambahkan tombol navigasi responsif: button#navToggle ditambahkan pada
-  header di index.html, dan ul navigasi diberi id="navMenu".
-- Memilih elemen navigasi lewat DOM: navToggle dan navMenu dipilih dengan
-  getElementById() di script.js dan disimpan dalam variabel.
-- Menambahkan penanganan event click pada tombol navigasi: listener click
-  sementara pada navToggle di script.js yang mencetak pesan ke Console. Isinya
-  akan diganti dengan mekanisme buka-tutup menu pada tahap berikutnya.
-- Menambahkan toggle class menu navigasi: listener click pada navToggle memanggil navMenu.classList.toggle("nav-open"). Aturan CSS untuk .header-top, #navMenu, #navMenu.nav-open, .nav-toggle, dan media query desktop ditambahkan di style.css karena belum tersedia di baseline P4.
-- Memperbarui status tombol navigasi: listener click pada navToggle memperbarui aria-expanded dengan setAttribute() berdasarkan nilai isOpen, dan mengatur aria-label ("Tutup navigasi" saat menu terbuka, "Buka navigasi" saat tertutup) lewat percabangan if...else.
+- Baseline: file P4 (index.html, style.css, img/foto-profil.jpg) disalin ke
+  folder pertemuan-05/. Cara menjalankan: buka pertemuan-05/index.html di
+  browser.
+- script.js dibuat dan dihubungkan ke index.html dengan
+  `<script src="script.js"></script>` sebelum `</body>`.
+- Elemen tambahan di index.html yang belum ada di baseline P4: id="contactForm"
+  dan novalidate pada form, `<p id="formFeedback">` untuk pesan, tombol menu
+  button#navToggle di dalam div.header-top, dan id="navMenu" pada daftar menu.
+- Menu navigasi: klik tombol ☰ memanggil classList.toggle("nav-open") pada
+  menu. Nilai hasilnya (isOpen) dipakai untuk memperbarui aria-expanded dan
+  aria-label. Aturan CSS untuk menu ditambahkan di style.css.
+- Event pada formulir: listener submit (dengan event.preventDefault() supaya
+  halaman tidak refresh), listener input, dan listener reset. Dua yang
+  terakhir mengosongkan pesan di formFeedback.
+- Validasi formulir: nilai dibaca di listener submit (value, trim(), Number(),
+  querySelector(), querySelectorAll()), lalu diperiksa berurutan dan berhenti
+  di kegagalan pertama dengan return. Aturannya: nama 3 sampai 50 karakter,
+  email dengan pola sederhana, semester 1 sampai 14, tanggal diisi, jenis pesan
+  dipilih, minimal satu topik, program studi dipilih, dan pesan tidak kosong
+  serta maksimal 300 karakter.
+- Umpan balik: pesan kegagalan sesuai aturan yang dilanggar atau pesan
+  "Form berhasil divalidasi." ditampilkan lewat formFeedback.textContent di
+  halaman yang sama. Warna pesan diatur dengan class form-feedback-error dan
+  form-feedback-success lewat formFeedback.className, dengan aturan CSS di
+  style.css.
 
 ## Pengujian
 
-- Halaman dibuka di browser: tampil sama seperti P4 (navigasi, formulir,
-  footer, gambar profil muncul, CSS jalan). Tidak ada galat.
-- Koneksi script.js: saat script.js berisi
-  `console.log("script.js berhasil dijalankan.");`, pesan tersebut muncul di
-  tab Console. Setelah baris itu dihapus dan halaman dimuat ulang, Console
-  tidak menampilkan galat baru dan tampilan halaman tidak berubah.
-- F.2 getElementById (Console): id `nama`, `email`, `semester`, dan `contact`
-  menghasilkan elemen yang sesuai. id `navToggle`, `navMenu`, dan `contactForm`
-  menghasilkan `null` karena elemennya belum ditambahkan di index.html.
-  Hasil `getElementById("nama")` juga berhasil disimpan ke variabel `namaInput`.
-- F.3 querySelector (Console): `#nama`, `.input-form` (hanya elemen pertama),
-  `h1`, dan `#contact` ditemukan. Selector
-  `input[name="jenis_pesan"]:checked` menghasilkan `null` sebelum radio
-  dipilih dan menghasilkan radio `saran` setelah dipilih.
-- F.4 querySelectorAll (Console): jumlah checkbox minat yang terpilih adalah 0
-  saat kosong, 1 saat HTML dicentang, dan 2 saat HTML dan CSS dicentang.
-- F.5 value (Console): kolom kosong menghasilkan string kosong; setelah diisi,
-  value sesuai isian, dan semester terbaca sebagai teks.
-- F.6 textContent (Console): `formFeedback` ditemukan; teks dapat diubah dan
-  dihapus melalui `textContent`.
-- F.7 classList (Console): add, remove, contains, dan toggle diuji pada elemen
-  #home dengan class latihan. toggle mengembalikan true saat class ditambahkan
-  dan false saat dihapus. Pengujian pada navMenu dilakukan di bagian H setelah
-  elemennya tersedia.
-- G.2 addEventListener: kode percobaan sementara pada elemen h1 di script.js.
-  Saat judul diklik, pesan "Judul diklik." muncul di Console pada setiap klik.
-  Kode percobaan dihapus setelah pengujian karena listener final dipasang pada
-  navToggle dan contactForm pada bagian berikutnya.
-- G.3 event click: kode percobaan sementara pada foto profil di script.js.
-  Setiap klik mencetak pesan dan jumlah klik di Console. Kode percobaan dihapus
-  setelah pengujian karena listener click final dipasang pada navToggle di
-  bagian H.
-- G.4 event submit: saat tombol Kirim diklik, pesan "Form dikirim." muncul di
-  Console. Halaman memuat ulang setelahnya karena preventDefault belum dipasang.
-- G.5 event input: pesan pengujian dimunculkan manual lewat Console. Setelah
-  salah satu isian diubah, pesan hilang dari formFeedback. Diulang pada
-  beberapa kolom.
-- G.6 event reset: pesan pengujian dimunculkan manual lewat Console, isian form
-  diisi, lalu tombol Batal diklik. Isian kembali kosong dan pesan di
-  formFeedback hilang.
-- G.7 event object: console.log(event) sementara pada listener submit. Console
-  menampilkan SubmitEvent dengan type "submit" dan target form#contactForm.
-  Kode dikembalikan seperti semula setelah pengamatan.
-- G.8 preventDefault: tombol Kirim diklik. Pesan "Form dikirim." tetap tampil
-  di Console, halaman tidak refresh, dan URL tidak berubah. Pengujian pesan
-  validasi dilakukan setelah validasi dibuat di bagian I.
-- H.2 tombol navigasi: tombol button#navToggle sudah ditambahkan pada header di
-  index.html sebelum tahap H.2. Diperiksa di browser: tombol tampil, tautan
-  navigasi tetap tersedia, atribut aria-label dan aria-expanded sesuai.
-  Perilaku buka-tutup menu belum dibuat.
-- H.3 akses elemen navigasi: console.log(navToggle) dan console.log(navMenu)
-  menampilkan elemen tombol dan menu, bukan null. Tidak ada galat di Console
-  saat halaman dimuat.
-- H.4 event click pada tombol navigasi: tombol ☰ diklik. Pesan "Tombol
-  navigasi diklik." muncul di Console pada setiap klik, satu pesan per klik.
-  Menu belum membuka atau menutup karena mekanisme class dibuat pada tahap
-  berikutnya.
-- H.5 classList.toggle: pada lebar layar kecil, menu tersembunyi saat awal. Klik tombol menambahkan class nav-open dan menu tampil; klik berikutnya menghapus class dan menu tersembunyi. Pada lebar layar besar, menu tampil mendatar dan tombol tidak tampil.
-- H.6 status navigasi: di panel Elements, sebelum diklik aria-expanded="false" dan aria-label="Buka navigasi". Setelah klik pertama menu terbuka, aria-expanded menjadi "true" dan aria-label menjadi "Tutup navigasi". Setelah klik kedua kembali ke nilai awal.
-- Masalah yang ditemukan: tidak ada.
-- H.7 hamburger menu: diuji pada lebar layar kecil dan besar memakai device toolbar. Menu tersembunyi pada kondisi awal; klik tombol membuka menu (aria-expanded "true", aria-label "Tutup navigasi"); klik kedua menutup menu (aria-expanded "false", aria-label "Buka navigasi"). Pada lebar layar di atas 768px menu tampil mendatar dan tombol tidak tampil. Console tidak menampilkan galat.
-- I.2 pengambilan nilai: console.log sementara menampilkan nilai setiap kolom saat Kirim diklik. Semester terbaca sebagai angka, jenisPesan null saat radio belum dipilih, topikDipilih kosong saat tidak ada checkbox dicentang. console.log dihapus setelah pengujian.
+- Baseline: halaman dibuka di browser dan tampilannya sama seperti P4
+  (navigasi, formulir, footer, gambar, dan CSS). Tidak ada galat.
+- Koneksi script.js: saat script.js berisi console.log percobaan, pesan muncul
+  di Console. Setelah baris itu dihapus, Console tidak menampilkan galat baru
+  dan tampilan tidak berubah.
+- Latihan DOM di Console (F.2 sampai F.7): getElementById, querySelector,
+  querySelectorAll, value, textContent, dan classList sudah dicoba dan
+  hasilnya sesuai. Contohnya, id navToggle, navMenu, dan contactForm bernilai
+  null saat itu karena elemennya belum ditambahkan, dan selector radio
+  :checked bernilai null sebelum ada yang dipilih.
+- Latihan event (G.2 sampai G.8): klik, submit, input, reset, event object, dan
+  preventDefault sudah dicoba dan hasilnya sesuai. Sebelum preventDefault
+  dipasang halaman refresh saat Kirim diklik, setelah dipasang tidak lagi.
+  Kode percobaan sementara sudah dihapus.
+- Menu navigasi (H.2 sampai H.7, K.1): di layar kecil menu tersembunyi, klik
+  tombol membuka menu (aria-expanded "true", aria-label "Tutup navigasi"), klik
+  kedua menutup menu (aria-expanded "false", aria-label "Buka navigasi"). Di
+  layar lebih dari 768px menu tampil mendatar dan tombol tidak tampil.
+  Hasilnya sesuai.
+- Pengambilan nilai (I.2): console.log sementara menampilkan nilai setiap
+  kolom. Semester terbaca sebagai angka, jenisPesan null saat radio belum
+  dipilih, dan topikDipilih kosong saat tidak ada checkbox dicentang.
+  console.log dihapus setelah pengujian.
+- Validasi formulir (I.3 sampai I.14, K.2): semua kasus sudah dicoba, yaitu
+  nama pendek, email tidak sesuai pola, semester kosong atau di luar 1 sampai
+  14, tanggal kosong, jenis pesan belum dipilih, topik belum dipilih, program
+  studi belum dipilih, pesan kosong, pesan 300 karakter, dan semua isian
+  benar. Pesan yang muncul sesuai aturan.
+- Umpan balik (J, K.3): pesan kegagalan muncul sesuai aturan yang dilanggar,
+  hilang saat isian diubah, dan hilang saat tombol Batal diklik. Pesan
+  "Form berhasil divalidasi." hanya muncul setelah semua pemeriksaan lolos
+  dan tidak menyatakan data sudah dikirim atau disimpan.
+- Temuan: semester berupa angka desimal (pakai titik atau koma) tetap lolos
+  validasi karena kode tidak memeriksa bilangan bulat. Ini sesuai batasan yang
+  disebut di modul.
+- Debugging dan pengujian ulang (K.4 sampai K.8): Console tidak menampilkan
+  galat JavaScript selama pengujian, jadi tidak ada perbaikan yang diperlukan.
+- Masalah yang ditemukan: tidak ada galat. Hanya keterbatasan semester desimal
+  di atas.
 
 ## Riwayat Pengembangan
 
-- Siapkan baseline P5 dari artefak P4: salin file P4 dan cek tampilan awal,
-  hasilnya sesuai.
-- Hubungkan JavaScript eksternal ke HTML: menambahkan script.js dan tag
-  `<script src>` di index.html, hubungan berhasil diverifikasi lewat Console.
-- Tambah elemen formFeedback: elemen ditambahkan di index.html dan diuji lewat
-  Console.
+- Siapkan baseline P5 dari artefak P4: file P4 disalin dan tampilan awal
+  dicek, hasilnya sesuai.
+- Hubungkan JavaScript eksternal ke HTML: script.js ditambahkan dan
+  dihubungkan ke index.html, hubungan diverifikasi lewat Console.
+- Menambah elemen formFeedback: elemen pesan ditambahkan di index.html dan
+  diuji lewat Console.
 - Tambahkan penanganan event submit: id contactForm dan novalidate
-  ditambahkan, event submit berhasil teramati lewat Console.
-- Tambahkan penanganan event input: listener input ditambahkan dan pesan
-  umpan balik terhapus saat isian diubah.
-- Tambahkan penanganan event reset: listener reset ditambahkan dan pesan
-  umpan balik terhapus saat form di-reset.
+  ditambahkan, event submit teramati lewat Console.
+- Tambahkan penanganan event input: pesan umpan balik terhapus saat isian
+  diubah.
+- Tambahkan penanganan event reset: pesan umpan balik terhapus saat form
+  di-reset.
 - Terapkan pencegahan submit bawaan peramban: preventDefault ditambahkan pada
-  listener submit, halaman tidak lagi refresh saat form dikirim.
+  listener submit, halaman tidak refresh saat Kirim diklik.
+- Tambah tombol navigasi responsif: tombol navToggle ditambahkan pada header
+  dan diperiksa di browser.
 - Pilih elemen navigasi dengan DOM: navToggle dan navMenu dipilih dan
   diverifikasi lewat Console.
-- Perbarui status tombol navigasi: aria-expanded dan aria-label mengikuti keadaan menu.
+- Tambah toggle class menu navigasi: klik tombol menambah atau menghapus class
+  nav-open, aturan CSS menu ditambahkan, menu buka-tutup sesuai.
+- Perbarui status tombol navigasi: aria-expanded dan aria-label berubah
+  mengikuti keadaan menu.
+- Tambahkan pemeriksaan kelengkapan data formulir: pemeriksaan tanggal, jenis
+  pesan, topik, program studi, dan pesan ditambahkan dan diuji.
+- Terapkan validasi formulir sisi klien: validasi nama, email, semester, batas
+  panjang pesan, dan pesan keberhasilan ditambahkan dan diuji.
+- Tambah warna pesan dan perbarui README P5: aturan warna pesan ditambahkan di
+  style.css dan README dilengkapi.
