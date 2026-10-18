@@ -52,6 +52,7 @@ dijalankan.");`, pesan tersebut muncul di tab Console. Setelah baris itu
 - G.6 event reset: pesan pengujian dimunculkan manual lewat Console, isian form diisi, lalu tombol Batal diklik. Isian kembali kosong dan pesan di formFeedback hilang.
 - G.7 event object: console.log(event) sementara pada listener submit. Console menampilkan SubmitEvent dengan type "submit" dan target form#contactForm. Kode dikembalikan seperti semula setelah pengamatan.
 - G.8 preventDefault: tombol Kirim diklik. Pesan "Form dikirim." tetap tampil di Console, halaman tidak refresh, dan URL tidak berubah. Pengujian pesan validasi dilakukan setelah validasi dibuat di bagian I.
+- H.2 tombol navigasi: tombol button#navToggle sudah ditambahkan pada header di index.html sebelum tahap H.2. Diperiksa di browser: tombol tampil, tautan navigasi tetap tersedia, atribut aria-label dan aria-expanded sesuai. Perilaku buka-tutup menu belum dibuat.
 
 ## Riwayat Pengembangan
 
