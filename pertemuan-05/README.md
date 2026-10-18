@@ -35,6 +35,7 @@ event listener, interaksi navigasi, dan validasi formulir sisi klien.
   sementara pada navToggle di script.js yang mencetak pesan ke Console. Isinya
   akan diganti dengan mekanisme buka-tutup menu pada tahap berikutnya.
 - Menambahkan toggle class menu navigasi: listener click pada navToggle memanggil navMenu.classList.toggle("nav-open"). Aturan CSS untuk .header-top, #navMenu, #navMenu.nav-open, .nav-toggle, dan media query desktop ditambahkan di style.css karena belum tersedia di baseline P4.
+- Memperbarui status tombol navigasi: listener click pada navToggle memperbarui aria-expanded dengan setAttribute() berdasarkan nilai isOpen, dan mengatur aria-label ("Tutup navigasi" saat menu terbuka, "Buka navigasi" saat tertutup) lewat percabangan if...else.
 
 ## Pengujian
 
@@ -96,6 +97,7 @@ event listener, interaksi navigasi, dan validasi formulir sisi klien.
   Menu belum membuka atau menutup karena mekanisme class dibuat pada tahap
   berikutnya.
 - H.5 classList.toggle: pada lebar layar kecil, menu tersembunyi saat awal. Klik tombol menambahkan class nav-open dan menu tampil; klik berikutnya menghapus class dan menu tersembunyi. Pada lebar layar besar, menu tampil mendatar dan tombol tidak tampil.
+- H.6 status navigasi: di panel Elements, sebelum diklik aria-expanded="false" dan aria-label="Buka navigasi". Setelah klik pertama menu terbuka, aria-expanded menjadi "true" dan aria-label menjadi "Tutup navigasi". Setelah klik kedua kembali ke nilai awal.
 - Masalah yang ditemukan: tidak ada.
 
 ## Riwayat Pengembangan
@@ -116,3 +118,4 @@ event listener, interaksi navigasi, dan validasi formulir sisi klien.
   listener submit, halaman tidak lagi refresh saat form dikirim.
 - Pilih elemen navigasi dengan DOM: navToggle dan navMenu dipilih dan
   diverifikasi lewat Console.
+- Perbarui status tombol navigasi: aria-expanded dan aria-label mengikuti keadaan menu.
