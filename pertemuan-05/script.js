@@ -24,6 +24,7 @@ const pesanInput = document.getElementById("pesan");
 
 contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
+  formFeedback.className = "form-feedback-error";
 
   const nama = namaInput.value.trim();
   const email = emailInput.value.trim();
@@ -36,7 +37,18 @@ contactForm.addEventListener("submit", (event) => {
   const prodi = prodiInput.value;
   const pesan = pesanInput.value.trim();
 
-  if (semesterInput.value === "") {
+  if (nama.length < 3 || nama.length > 50) {
+    formFeedback.textContent = "Nama lengkap harus diisi 3 sampai 50 karakter.";
+    return;
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    formFeedback.textContent = "Masukkan alamat email yang valid.";
+    return;
+  }
+
+  if (semesterInput.value === "" || semester < 1 || semester > 14) {
     formFeedback.textContent = "Semester harus diisi dengan angka 1 sampai 14.";
     return;
   }
@@ -66,7 +78,13 @@ contactForm.addEventListener("submit", (event) => {
     return;
   }
 
-  console.log("Semua pemeriksaan kelengkapan lolos.");
+  if (pesan.length > 300) {
+    formFeedback.textContent = "Pesan maksimal 300 karakter.";
+    return;
+  }
+
+  formFeedback.textContent = "Form berhasil divalidasi.";
+  formFeedback.className = "form-feedback-success";
 });
 
 contactForm.addEventListener("input", () => {
