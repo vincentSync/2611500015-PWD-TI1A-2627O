@@ -18,6 +18,7 @@ event listener, interaksi navigasi, dan validasi formulir sisi klien.
   dalam form pada index.html sebagai tempat pesan hasil validasi.
 - Menyiapkan form untuk event submit: menambahkan id="contactForm" dan atribut novalidate pada tag form di index.html, serta menambahkan listener submit di script.js.
 - Menambahkan penanganan event input: listener input pada contactForm di script.js yang mengosongkan formFeedback saat pengguna mengubah isian form.
+- Menambahkan penanganan event reset: listener reset pada contactForm di script.js yang mengosongkan formFeedback saat tombol Batal diklik.
 
 ## Pengujian
 
@@ -47,6 +48,7 @@ dijalankan.");`, pesan tersebut muncul di tab Console. Setelah baris itu
 - G.3 event click: kode percobaan sementara pada foto profil di script.js. Setiap klik mencetak pesan dan jumlah klik di Console. Kode percobaan dihapus setelah pengujian karena listener click final dipasang pada navToggle di bagian H.
 - G.4 event submit: saat tombol Kirim diklik, pesan "Form dikirim." muncul di Console. Halaman memuat ulang setelahnya karena preventDefault belum dipasang.
 - G.5 event input: pesan pengujian dimunculkan manual lewat Console. Setelah salah satu isian diubah, pesan hilang dari formFeedback. Diulang pada beberapa kolom.
+- G.6 event reset: pesan pengujian dimunculkan manual lewat Console, isian form diisi, lalu tombol Batal diklik. Isian kembali kosong dan pesan di formFeedback hilang.
 
 ## Riwayat Pengembangan
 
@@ -58,3 +60,4 @@ dijalankan.");`, pesan tersebut muncul di tab Console. Setelah baris itu
   Console.
 - Tambahkan penanganan event submit: id contactForm dan novalidate ditambahkan, event submit berhasil teramati lewat Console.
 - Tambahkan penanganan event input: listener input ditambahkan dan pesan umpan balik terhapus saat isian diubah.
+- Tambahkan penanganan event reset: listener reset ditambahkan dan pesan umpan balik terhapus saat form di-reset.
