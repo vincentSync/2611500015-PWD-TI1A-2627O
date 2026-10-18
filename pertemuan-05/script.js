@@ -1,3 +1,6 @@
+const navToggle = document.getElementById("navToggle");
+const navMenu = document.getElementById("navMenu");
+
 const contactForm = document.getElementById("contactForm");
 const formFeedback = document.getElementById("formFeedback");
 

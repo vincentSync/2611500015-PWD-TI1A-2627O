@@ -20,6 +20,7 @@ event listener, interaksi navigasi, dan validasi formulir sisi klien.
 - Menambahkan penanganan event input: listener input pada contactForm di script.js yang mengosongkan formFeedback saat pengguna mengubah isian form.
 - Menambahkan penanganan event reset: listener reset pada contactForm di script.js yang mengosongkan formFeedback saat tombol Batal diklik.
 - Menerapkan pencegahan submit bawaan: event.preventDefault() ditambahkan di awal listener submit pada script.js agar halaman tidak refresh atau berpindah saat form dikirim. Validasi pada P5 berjalan di sisi klien dan belum mengirim atau menyimpan data ke server.
+- Memilih elemen navigasi lewat DOM: navToggle dan navMenu dipilih dengan getElementById() di script.js dan disimpan dalam variabel. Atribut id="navMenu" ditambahkan pada ul navigasi di index.html (jika kamu menambahkannya sendiri).
 
 ## Pengujian
 
@@ -53,6 +54,7 @@ dijalankan.");`, pesan tersebut muncul di tab Console. Setelah baris itu
 - G.7 event object: console.log(event) sementara pada listener submit. Console menampilkan SubmitEvent dengan type "submit" dan target form#contactForm. Kode dikembalikan seperti semula setelah pengamatan.
 - G.8 preventDefault: tombol Kirim diklik. Pesan "Form dikirim." tetap tampil di Console, halaman tidak refresh, dan URL tidak berubah. Pengujian pesan validasi dilakukan setelah validasi dibuat di bagian I.
 - H.2 tombol navigasi: tombol button#navToggle sudah ditambahkan pada header di index.html sebelum tahap H.2. Diperiksa di browser: tombol tampil, tautan navigasi tetap tersedia, atribut aria-label dan aria-expanded sesuai. Perilaku buka-tutup menu belum dibuat.
+- H.3 akses elemen navigasi: console.log(navToggle) dan console.log(navMenu) menampilkan elemen tombol dan menu, bukan null. Tidak ada galat di Console saat halaman dimuat.
 
 ## Riwayat Pengembangan
 
@@ -66,3 +68,4 @@ dijalankan.");`, pesan tersebut muncul di tab Console. Setelah baris itu
 - Tambahkan penanganan event input: listener input ditambahkan dan pesan umpan balik terhapus saat isian diubah.
 - Tambahkan penanganan event reset: listener reset ditambahkan dan pesan umpan balik terhapus saat form di-reset.
 - Terapkan pencegahan submit bawaan peramban: preventDefault ditambahkan pada listener submit, halaman tidak lagi refresh saat form dikirim.
+- Pilih elemen navigasi dengan DOM: navToggle dan navMenu dipilih dan diverifikasi lewat Console.
