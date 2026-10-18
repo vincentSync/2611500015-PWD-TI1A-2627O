@@ -99,6 +99,8 @@ event listener, interaksi navigasi, dan validasi formulir sisi klien.
 - H.5 classList.toggle: pada lebar layar kecil, menu tersembunyi saat awal. Klik tombol menambahkan class nav-open dan menu tampil; klik berikutnya menghapus class dan menu tersembunyi. Pada lebar layar besar, menu tampil mendatar dan tombol tidak tampil.
 - H.6 status navigasi: di panel Elements, sebelum diklik aria-expanded="false" dan aria-label="Buka navigasi". Setelah klik pertama menu terbuka, aria-expanded menjadi "true" dan aria-label menjadi "Tutup navigasi". Setelah klik kedua kembali ke nilai awal.
 - Masalah yang ditemukan: tidak ada.
+- H.7 hamburger menu: diuji pada lebar layar kecil dan besar memakai device toolbar. Menu tersembunyi pada kondisi awal; klik tombol membuka menu (aria-expanded "true", aria-label "Tutup navigasi"); klik kedua menutup menu (aria-expanded "false", aria-label "Buka navigasi"). Pada lebar layar di atas 768px menu tampil mendatar dan tombol tidak tampil. Console tidak menampilkan galat.
+- I.2 pengambilan nilai: console.log sementara menampilkan nilai setiap kolom saat Kirim diklik. Semester terbaca sebagai angka, jenisPesan null saat radio belum dipilih, topikDipilih kosong saat tidak ada checkbox dicentang. console.log dihapus setelah pengujian.
 
 ## Riwayat Pengembangan
 
