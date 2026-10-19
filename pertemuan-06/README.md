@@ -73,3 +73,28 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Tidak ada galat.
 - Kode uji dihapus setelah pengujian selesai.
 - Commit: membandingkan keluaran tag HTML dan tag HTML di dalam tag PHP
+
+### 5. Variabel PHP
+
+- Blok PHP ditambahkan di bagian paling awal index.php, sebelum `<!doctype html>`:
+
+```php
+  <?php
+  // P6: PHP dasar dan pemrograman sisi peladen
+  // Bagian 1: Variabel dan konstanta
+  $nim = "2611500015";
+  $namaMahasiswa = "Vincent Surya Julianto";
+  $programStudi = "TI";
+  $tahunAkademik = "2026/2027";
+  $semester = 1;
+  $ipk = 3.75;
+  $statusAktif = true;
+  $catatanTambahan = null;
+  ?>
+```
+
+- Variabel diawali tanda `$` dan nilainya ditetapkan dengan operator `=`. Nama variabel bersifat case sensitive.
+- Halaman tetap tampil normal dan tidak muncul galat PHP.
+- Nama dan nilai variabel sudah diperiksa ulang, tidak ada salah ketik.
+- Variabel belum ditampilkan di halaman, hanya dideklarasikan.
+- Commit: menambahkan deklarasi variabel PHP
