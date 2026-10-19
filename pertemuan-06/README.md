@@ -31,3 +31,27 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Tidak ada galat.
 - Kode uji dihapus setelah pengujian selesai.
 - Commit: pengujian komentar, echo, tag dasar PHP
+
+### 3. Komentar, echo, dan print
+
+- Kode uji ditambahkan di index.php, setelah tag `<body>` dan sebelum `<header>`:
+
+```php
+  <?php
+  // Komentar satu baris.
+  echo "Keluaran menggunakan echo.";
+
+  /*
+  Komentar beberapa baris.
+  Komentar ini tidak ditampilkan pada halaman.
+  */
+  ?>
+```
+
+- Uji echo: teks "Keluaran menggunakan echo." tampil di halaman.
+- Isi komentar (satu baris maupun beberapa baris) tidak tampil di halaman dan tidak muncul di View Page Source.
+- Uji print dilakukan terpisah dengan mengganti baris echo menjadi `print "Keluaran menggunakan print.";`. Teks "Keluaran menggunakan print." tampil di halaman.
+- Perbedaan yang diamati: echo dan print sama-sama menghasilkan keluaran teks di halaman, sedangkan komentar hanya keterangan di kode dan tidak ditampilkan.
+- Tidak ada galat.
+- Kode uji dihapus setelah pengujian selesai.
+- Commit: mempelajari komentar dan keluaran dengan echo dan print di PHP
