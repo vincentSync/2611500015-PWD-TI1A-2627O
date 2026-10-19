@@ -7,13 +7,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-   <?php
-// Komentar satu baris.
-print "Keluaran menggunakan print.";
-/*
-Komentar beberapa baris.
-Komentar ini tidak ditampilkan pada halaman.
-*/
+   <p>Konten HTML statis.</p>
+<?php
+echo "<p>Konten yang dihasilkan oleh PHP.</p>";
 ?>
     <header>
       <div class="header-top">

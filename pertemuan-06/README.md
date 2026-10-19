@@ -55,3 +55,21 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Tidak ada galat.
 - Kode uji dihapus setelah pengujian selesai.
 - Commit: mempelajari komentar dan keluaran dengan echo dan print di PHP
+
+### 4. Perbedaan Keluaran HTML Statis dan Keluaran Dinamis PHP
+
+- Kode uji ditambahkan di index.php, setelah tag `<body>` dan sebelum `<header>`:
+
+```php
+  <p>Konten HTML statis.</p>
+  <?php
+  echo "<p>Konten yang dihasilkan oleh PHP.</p>";
+  ?>
+```
+
+- Kedua teks tampil di halaman: "Konten HTML statis." dan "Konten yang dihasilkan oleh PHP.".
+- View Page Source (Ctrl+U) menampilkan kedua paragraf sebagai HTML biasa. Kode PHP tidak muncul mentah, artinya sudah diproses oleh peladen.
+- Perbedaan yang diamati: HTML statis ditulis langsung di markup, sedangkan keluaran PHP dihasilkan oleh instruksi program lalu disertakan dalam respons HTML. Hasilnya di peramban sama-sama berupa paragraf.
+- Tidak ada galat.
+- Kode uji dihapus setelah pengujian selesai.
+- Commit: membandingkan keluaran tag HTML dan tag HTML di dalam tag PHP
