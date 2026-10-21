@@ -177,3 +177,32 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Setelah pengujian, `$semester` dikembalikan menjadi 2 dan keluaran kembali menjadi "Sesuai rentang".
 - Tidak ada galat.
 - Commit: menerapkan pemeriksaan rentang semester
+
+### 10. Percabangan if-elseif-else
+
+- Pada blok PHP di bagian awal index.php, setelah deklarasi variabel operator, ditambahkan:
+
+```php
+  // Bagian 3: Percabangan if-elseif-else
+  if ($semester < 3) {
+    $keteranganSemester = "Semester awal";
+  } elseif ($semester <= 6) {
+    $keteranganSemester = "Semester menengah";
+  } else {
+    $keteranganSemester = "Semester akhir";
+  }
+```
+
+- Semester kurang dari 3 dikategorikan semester awal, sampai dengan 6 semester menengah, dan di atas 6 semester akhir.
+- Pada bagian Tentang Saya, di dalam `<article>` Profil Singkat, ditambahkan:
+
+```php
+  <p>Semester: <?php echo $semester . " (" . $keteranganSemester . ")"; ?></p>
+```
+
+- Operator titik (`.`) dipakai untuk menggabungkan teks dan nilai menjadi satu keluaran.
+- Hasil pengujian dengan `$semester = 2`: halaman menampilkan "Semester: 2 (Semester awal)".
+- Pengujian kondisi lain: `$semester = 4` menghasilkan "Semester menengah", dan `$semester = 7` menghasilkan "Semester akhir". Setelah pengujian, `$semester` dikembalikan menjadi 2.
+- Galat yang ditemukan (saat memeriksa kode di GitHub): pada tahap E.3, paragraf pemeriksaan rentang semester salah ditempatkan karena kode tidak menimpa bagian `section` sampai `article` yang lama. Akibatnya `<section id="about">`, `<h2>Tentang Saya</h2>`, `<article>`, dan `<h3>Profil Singkat</h3>` muncul dua kali, sehingga judul "Tentang Saya" dan "Profil Singkat" tampil ganda dan paragraf berada di urutan yang salah.
+- Perbaikan: blok ganda dihapus sehingga hanya ada satu `section`, satu `article`, dan satu `<h3>Profil Singkat</h3>`, dan paragraf pemeriksaan rentang semester dipindahkan ke tempat yang benar. Setelah dimuat ulang, judul hanya tampil satu kali.
+- Commit: menerapkan percabangan if elseif else
