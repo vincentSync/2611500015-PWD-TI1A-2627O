@@ -98,3 +98,18 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Nama dan nilai variabel sudah diperiksa ulang, tidak ada salah ketik.
 - Variabel belum ditampilkan di halaman, hanya dideklarasikan.
 - Commit: menambahkan deklarasi variabel PHP
+
+### 6. Konstanta PHP
+
+- Dua konstanta ditambahkan di blok PHP yang sama di index.php, setelah deklarasi variabel dan sebelum tag penutup `?>`:
+
+```php
+  const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
+  const PROFIL_GITHUB = "<username GitHub Anda>";
+```
+
+- Konstanta dideklarasikan dengan `const` dan ditulis tanpa tanda `$`, baik saat didefinisikan maupun dipanggil.
+- Penulisan `const`, nama konstanta, tanda kutip, dan titik koma sudah diperiksa di kode.
+- Halaman tetap tampil normal melalui localhost dan tidak muncul galat PHP.
+- Pada tahap ini hanya keberadaan deklarasi yang diperiksa. Penggunaan konstanta di halaman diuji pada tahap berikutnya (D.4).
+- Commit: menambahkan konstanta PHP
