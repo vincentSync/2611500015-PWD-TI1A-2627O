@@ -155,3 +155,25 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Hasil pengujian: halaman tampil normal tanpa galat PHP dan menampilkan "Sisa semester hingga batas: 6" (batas semester 8 dikurangi semester 2).
 - Perubahan diperiksa dengan `git status` sebelum commit.
 - Commit: menambahkan operator aritmetika PHP
+
+### 9. Operator Perbandingan dan Logika
+
+- Pada blok PHP di bagian awal index.php, setelah deklarasi `$sisaSemester`, ditambahkan:
+
+```php
+  $semesterValid = $semester >= 1 && $semester <= $batasSemester;
+  $statusSemester = ($semesterValid && $statusAktif) ? "Sesuai rentang" : "Perlu diperiksa";
+```
+
+- Operator `>=` dan `<=` memeriksa apakah semester berada dalam rentang 1 sampai batas semester. Operator `&&` menggabungkan hasil pemeriksaan rentang dengan status aktif mahasiswa. Operator ternary `? :` memilih teks berdasarkan hasil pemeriksaan.
+- Pada bagian Tentang Saya, di dalam `<article>` Profil Singkat, setelah paragraf sisa semester ditambahkan:
+
+```php
+  <p>Pemeriksaan rentang semester: <?php echo $statusSemester; ?></p>
+```
+
+- Hasil pengujian dengan `$semester = 2` dan `$statusAktif = true`: halaman menampilkan "Pemeriksaan rentang semester: Sesuai rentang".
+- Pengujian kondisi lain: `$semester` diubah sementara menjadi 9, halaman dimuat ulang, dan keluaran berubah menjadi "Pemeriksaan rentang semester: Perlu diperiksa".
+- Setelah pengujian, `$semester` dikembalikan menjadi 2 dan keluaran kembali menjadi "Sesuai rentang".
+- Tidak ada galat.
+- Commit: menerapkan pemeriksaan rentang semester

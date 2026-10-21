@@ -15,6 +15,8 @@
     // Bagian 2: Operator
 $batasSemester = 8;
 $sisaSemester = $batasSemester - $semester;
+$semesterValid = $semester >= 1 && $semester <= $batasSemester;
+$statusSemester = ($semesterValid && $statusAktif) ? "Sesuai rentang" : "Perlu diperiksa";
   ?>
 <!doctype html>
 <html lang="id">
@@ -67,6 +69,7 @@ $sisaSemester = $batasSemester - $semester;
           <section id="about">
           <h2>Tentang Saya</h2>
           <article>
+            <p>Pemeriksaan rentang semester: <?php echo $statusSemester; ?></p>
           <h3>Profil Singkat</h3>
           <p>Sisa semester hingga batas: <?php echo $sisaSemester; ?></p>
           <p>Saya mahasiswa Program Studi Teknik Informatika.</p>
