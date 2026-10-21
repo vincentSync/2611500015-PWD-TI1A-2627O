@@ -134,3 +134,24 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Tautan GitHub diklik dan mengarah ke alamat yang dibentuk dari nilai `PROFIL_GITHUB`.
 - Tidak ada galat.
 - Commit: menampilkan data mahasiswa dengan variabel dan konstanta
+
+### 8. Operator Aritmetika dan Penugasan
+
+- Pada blok PHP di bagian awal index.php, setelah deklarasi variabel dan konstanta, ditambahkan:
+
+```php
+  // Bagian 2: Operator
+  $batasSemester = 8;
+  $sisaSemester = $batasSemester - $semester;
+```
+
+- Pada bagian Tentang Saya, di dalam `<article>` Profil Singkat, setelah judul `<h3>Profil Singkat</h3>` ditambahkan paragraf:
+
+```php
+  <p>Sisa semester hingga batas: <?php echo $sisaSemester; ?></p>
+```
+
+- Operator `-` dipakai untuk pengurangan dan operator `=` untuk memberi nilai ke variabel.
+- Hasil pengujian: halaman tampil normal tanpa galat PHP dan menampilkan "Sisa semester hingga batas: 6" (batas semester 8 dikurangi semester 2).
+- Perubahan diperiksa dengan `git status` sebelum commit.
+- Commit: menambahkan operator aritmetika PHP
