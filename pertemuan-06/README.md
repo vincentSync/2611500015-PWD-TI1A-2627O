@@ -113,3 +113,24 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Halaman tetap tampil normal melalui localhost dan tidak muncul galat PHP.
 - Pada tahap ini hanya keberadaan deklarasi yang diperiksa. Penggunaan konstanta di halaman diuji pada tahap berikutnya (D.4).
 - Commit: menambahkan konstanta PHP
+
+### 7. Variabel dan Konstanta pada Halaman Profil
+
+- Pada section `id="home"`, setelah judul Selamat Datang, paragraf lama diganti dengan paragraf berikut:
+
+```php
+  <p>Halo, saya <strong><?php echo $namaMahasiswa; ?></strong>. Saya sedang mempelajari matakuliah <strong><?php print NAMA_MATA_KULIAH; ?></strong> pada tahun akademik <?php echo $tahunAkademik; ?>.</p>
+```
+
+- Pada bagian Kontak, atribut `href` tautan GitHub diganti agar memakai konstanta `PROFIL_GITHUB`, teks tautan tetap dipertahankan:
+
+```php
+  <a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">profil GitHub saya</a>
+```
+
+- `echo` dipakai untuk menampilkan variabel, `print` dipakai untuk menampilkan konstanta nama mata kuliah.
+- Hasil pengujian: nama mahasiswa, nama mata kuliah, dan tahun akademik tampil sesuai nilai yang dideklarasikan.
+- Struktur dan tampilan halaman dari P5 tetap dipertahankan.
+- Tautan GitHub diklik dan mengarah ke alamat yang dibentuk dari nilai `PROFIL_GITHUB`.
+- Tidak ada galat.
+- Commit: menampilkan data mahasiswa dengan variabel dan konstanta
