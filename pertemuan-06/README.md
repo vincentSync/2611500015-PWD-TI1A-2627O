@@ -206,3 +206,22 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Galat yang ditemukan (saat memeriksa kode di GitHub): pada tahap E.3, paragraf pemeriksaan rentang semester salah ditempatkan karena kode tidak menimpa bagian `section` sampai `article` yang lama. Akibatnya `<section id="about">`, `<h2>Tentang Saya</h2>`, `<article>`, dan `<h3>Profil Singkat</h3>` muncul dua kali, sehingga judul "Tentang Saya" dan "Profil Singkat" tampil ganda dan paragraf berada di urutan yang salah.
 - Perbaikan: blok ganda dihapus sehingga hanya ada satu `section`, satu `article`, dan satu `<h3>Profil Singkat</h3>`, dan paragraf pemeriksaan rentang semester dipindahkan ke tempat yang benar. Setelah dimuat ulang, judul hanya tampil satu kali.
 - Commit: menerapkan percabangan if elseif else
+
+### 11. Operator Ternary untuk Program Studi dan Status Mahasiswa
+
+- Pada blok PHP di bagian awal index.php, setelah percabangan if-elseif-else, ditambahkan:
+  ```php
+  $namaProdi = ($programStudi == "SI") ? "Sistem Informasi" : (($programStudi == "TI") ? "Teknik Informatika" : "Lainnya");
+  ```
+- Jika `$programStudi` bernilai SI hasilnya "Sistem Informasi", jika TI hasilnya "Teknik Informatika", selain itu "Lainnya".
+- Pada bagian Tentang Saya, di dalam `<article>` Profil Singkat, ditambahkan dua paragraf:
+  ```php
+  <p>Program Studi: <?php echo $namaProdi . " (" . $programStudi . ")"; ?></p>
+  <p>Status mahasiswa: <?php echo $statusAktif ? "Aktif" : "Tidak aktif"; ?></p>
+  ```
+- Paragraf pertama menampilkan nama program studi beserta kodenya. Paragraf kedua memakai operator ternary untuk menampilkan status berdasarkan nilai boolean `$statusAktif`.
+- Hasil pengujian dengan `$programStudi = "TI"` dan `$statusAktif = true`: halaman menampilkan "Program Studi: Teknik Informatika (TI)" dan "Status mahasiswa: Aktif".
+- Pengujian kondisi alternatif: `$programStudi` diubah sementara menjadi SI dan `$statusAktif` menjadi false. Halaman menampilkan "Program Studi: Sistem Informasi (SI)" dan "Status mahasiswa: Tidak aktif".
+- Setelah pengujian, kedua variabel dikembalikan ke nilai awal, yaitu TI dan true.
+- Tidak ada galat.
+- Commit: menerapkan operator ternary pada profil mahasiswa
