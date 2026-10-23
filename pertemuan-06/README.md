@@ -225,3 +225,30 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Setelah pengujian, kedua variabel dikembalikan ke nilai awal, yaitu TI dan true.
 - Tidak ada galat.
 - Commit: menerapkan operator ternary pada profil mahasiswa
+
+### 12. Percabangan switch-case-default
+
+- Pada blok PHP di bagian awal index.php, setelah deklarasi `$namaProdi`, ditambahkan:
+  ```php
+  // Bagian 4: Percabangan switch-case-default
+  switch ($programStudi) {
+    case "SI":
+      $fokusProgramStudi = "Sistem informasi dan proses bisnis";
+      break;
+    case "TI":
+      $fokusProgramStudi = "Komputasi dan pengembangan perangkat lunak";
+      break;
+    default:
+      $fokusProgramStudi = "Belum ditentukan";
+  }
+  ```
+- Setiap `case` menangani nilai program studi tertentu, `break` mengakhiri pelaksanaan cabang yang sesuai, dan `default` dipakai jika tidak ada nilai yang cocok. `break` tidak wajib pada `default` karena merupakan cabang terakhir.
+- Pada bagian Tentang Saya, di dalam `<article>` Profil Singkat, ditambahkan:
+  ```php
+  <p>Fokus program studi: <?php echo $fokusProgramStudi; ?></p>
+  ```
+- Hasil pengujian dengan `$programStudi = "TI"`: halaman menampilkan "Fokus program studi: Komputasi dan pengembangan perangkat lunak".
+- Pengujian cabang lain: `$programStudi` diubah sementara menjadi SI dan keluaran menjadi "Sistem informasi dan proses bisnis". Kemudian diubah menjadi MI (nilai yang tidak ditangani case) dan keluaran menjadi "Belum ditentukan".
+- Setelah pengujian, `$programStudi` dikembalikan menjadi TI.
+- Tidak ada galat.
+- Commit: menerapkan percabangan switch case
