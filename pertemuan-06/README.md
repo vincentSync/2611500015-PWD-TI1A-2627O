@@ -311,3 +311,14 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Hasil pengujian: halaman menampilkan daftar "Semester 1", "Semester 2", dan "Semester 3".
 - Tidak ada galat.
 - Commit: menerapkan perulangan while untuk nomor semester
+
+### 15. Menampilkan IPK dengan number_format()
+
+- Pada bagian Tentang Saya, di dalam `<article>` Profil Singkat, ditambahkan:
+  ```php
+  <p>IPK: <?php echo number_format($ipk, 2, ',', '.'); ?></p>
+  ```
+- Fungsi `number_format()` memformat angka sesuai jumlah desimal dan pemisah yang ditentukan. Parameternya: nilai `$ipk`, 2 angka desimal, koma sebagai pemisah desimal, dan titik sebagai pemisah ribuan.
+- Hasil pengujian dengan `$ipk = 3.75`: halaman menampilkan "IPK: 3,75" dengan dua angka desimal.
+- Tidak ada galat.
+- Commit: memformat tampilan IPK dengan number_format
