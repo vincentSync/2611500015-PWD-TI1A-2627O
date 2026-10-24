@@ -362,3 +362,14 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Hasil pengujian: tautan GitHub tampil dan mengarah ke alamat yang dibentuk dari nilai `PROFIL_GITHUB`, sedangkan footer menampilkan tahun dan NIM.
 - Tidak ada galat.
 - Commit: tidak ada perubahan kode baru pada tahap ini, sehingga tidak dibuat commit tambahan.
+
+### 19. Penyesuaian Atribut action pada Formulir
+
+- Pada P5, formulir memakai atribut `action="index.html"`. Karena halaman utama P6 sudah diubah menjadi `index.php`, atribut `action` disesuaikan agar tujuan pengiriman formulir mengarah ke halaman utama P6.
+- Pada elemen `<form>` di bagian Kontak, atribut `action` diubah menjadi `index.php`:
+  ```html
+  <form id="contactForm" action="index.php" method="get" novalidate></form>
+  ```
+- Pembahasan pada tahap ini hanya mencakup perubahan tujuan formulir. Pemrosesan data formulir dengan PHP dibahas pada P7.
+- Hasil pemeriksaan: atribut `action` pada formulir sudah bernilai `index.php`, dan halaman tetap tampil normal tanpa galat.
+- Commit: menyesuaikan action formulir ke index.php
