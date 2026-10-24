@@ -252,3 +252,41 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Setelah pengujian, `$programStudi` dikembalikan menjadi TI.
 - Tidak ada galat.
 - Commit: menerapkan percabangan switch case
+
+### 13. Perulangan for untuk Target Belajar
+
+- Pada bagian Tentang Saya, judul Target Belajar dan daftar statis yang lama diganti dengan kode berikut:
+  ```php
+  <h3>Target Belajar (Perulangan for)</h3>
+  <ol>
+    <?php
+    // Perulangan for tanpa array; materi larik dibahas pada P9.
+    for ($i = 1; $i <= 5; $i++) {
+      echo "<li>Target belajar ke-" . $i . ": ";
+      switch ($i) {
+        case 1:
+          echo "Memahami sintaks dasar PHP.";
+          break;
+        case 2:
+          echo "Menggunakan variabel dan konstanta.";
+          break;
+        case 3:
+          echo "Menerapkan operator dan percabangan.";
+          break;
+        case 4:
+          echo "Menggunakan perulangan for dan while.";
+          break;
+        default:
+          echo "Belum dipetakan";
+          break;
+      }
+      echo "</li>";
+    }
+    ?>
+  </ol>
+  ```
+- Perulangan `for` memakai penghitung `$i` yang dimulai dari 1 dan bertambah satu selama nilainya tidak melebihi 5. Setiap pengulangan menghasilkan satu butir daftar, dan `switch` menentukan teks target berdasarkan nilai `$i`.
+- Empat target pertama ditentukan oleh `case`, sedangkan target kelima memakai `default`. Array tidak digunakan karena materinya dibahas pada P9.
+- Hasil pengujian: bagian Target Belajar menampilkan lima butir, mulai dari "Target belajar ke-1: Memahami sintaks dasar PHP." sampai "Target belajar ke-5: Belum dipetakan".
+- Tidak ada galat.
+- Commit: menerapkan perulangan for untuk target belajar
