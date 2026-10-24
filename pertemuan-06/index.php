@@ -244,7 +244,7 @@ Kunjungi
     </main>
 
     <footer>
-      <p>&copy; 2026 Vincent Surya Julianto 2611500015</p>
+    <p>&copy; <?= date("Y") ?> <?php echo $namaMahasiswa; ?> [<?= $nim ?>]</p>
     </footer>
     <script src="script.js"></script>
   </body>

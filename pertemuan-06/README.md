@@ -335,3 +335,15 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Setelah pengujian, nilai variabel dikembalikan menjadi `null` dan keluaran kembali menjadi "Catatan tambahan: Belum ada".
 - Tidak ada galat.
 - Commit: menampilkan catatan tambahan berdasarkan nilai null
+
+### 17. Menampilkan Tahun dengan Fungsi date()
+
+- Pada elemen `<footer>`, paragraf footer yang masih memakai tahun dan identitas statis diganti dengan:
+  ```php
+  <p>&copy; <?= date("Y") ?> <?php echo $namaMahasiswa; ?> [<?= $nim ?>]</p>
+  ```
+- Fungsi `date("Y")` menghasilkan tahun empat digit sesuai tanggal pada lingkungan peladen saat program dijalankan.
+- Hasil pengujian: footer menampilkan simbol hak cipta, tahun saat ini, nama mahasiswa, dan NIM, yaitu "© 2026 Vincent Surya Julianto [2611500015]".
+- Tahun yang tampil sesuai dengan tahun pada lingkungan peladen saat pengujian.
+- Tidak ada galat.
+- Commit: menampilkan tahun dinamis pada footer
