@@ -322,3 +322,16 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Hasil pengujian dengan `$ipk = 3.75`: halaman menampilkan "IPK: 3,75" dengan dua angka desimal.
 - Tidak ada galat.
 - Commit: memformat tampilan IPK dengan number_format
+
+### 16. Memeriksa Nilai NULL
+
+- Pada bagian Tentang Saya, di dalam `<article>` Profil Singkat, ditambahkan:
+  ```php
+  <p>Catatan tambahan: <?php echo $catatanTambahan === null ? "Belum ada" : $catatanTambahan; ?></p>
+  ```
+- Nilai `NULL` menunjukkan bahwa variabel belum memiliki nilai. Operator identik `===` dipakai untuk memeriksa apakah nilai variabel benar-benar `NULL`, termasuk tipe datanya. Operator ternary memilih keluaran berdasarkan hasil pemeriksaan.
+- Hasil pengujian dengan `$catatanTambahan = null`: halaman menampilkan "Catatan tambahan: Belum ada".
+- Pengujian kondisi alternatif: `$catatanTambahan` diubah sementara menjadi "Catatan praktik PHP" di blok PHP bagian awal, halaman dimuat ulang, dan keluaran menjadi "Catatan tambahan: Catatan praktik PHP".
+- Setelah pengujian, nilai variabel dikembalikan menjadi `null` dan keluaran kembali menjadi "Catatan tambahan: Belum ada".
+- Tidak ada galat.
+- Commit: menampilkan catatan tambahan berdasarkan nilai null
