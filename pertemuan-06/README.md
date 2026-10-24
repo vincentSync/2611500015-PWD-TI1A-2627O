@@ -347,3 +347,18 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Tahun yang tampil sesuai dengan tahun pada lingkungan peladen saat pengujian.
 - Tidak ada galat.
 - Commit: menampilkan tahun dinamis pada footer
+
+### 18. Sintaks Keluaran Singkat <?= ... ?>
+
+- Tag `<?= ... ?>` adalah sintaks singkat PHP untuk menampilkan nilai suatu ekspresi. Sintaks ini dipakai pada tiga tempat: konstanta `PROFIL_GITHUB`, tahun dari `date("Y")`, dan variabel `$nim`.
+- Kode tautan GitHub pada bagian Kontak diperiksa kembali dan sudah memakai konstanta `PROFIL_GITHUB`:
+  ```php
+  <p>
+    Kunjungi
+    <a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">profil GitHub saya</a>.
+  </p>
+  ```
+- Footer yang dibuat pada tahap sebelumnya juga diperiksa. Bagian `<?= date("Y") ?>` dan `<?= $nim ?>` sudah memakai sintaks keluaran singkat, sehingga tidak ada keluaran baru yang ditambahkan hanya untuk mengulang demonstrasi.
+- Hasil pengujian: tautan GitHub tampil dan mengarah ke alamat yang dibentuk dari nilai `PROFIL_GITHUB`, sedangkan footer menampilkan tahun dan NIM.
+- Tidak ada galat.
+- Commit: tidak ada perubahan kode baru pada tahap ini, sehingga tidak dibuat commit tambahan.
