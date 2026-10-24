@@ -4,372 +4,125 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 
 ## Catatan Pengembangan
 
--
-
 ### 1. Pemeriksaan Awal PHP
 
 - Laragon dijalankan dengan Start All, Apache dan MySQL berjalan.
-- Lokasi proyek: <path folder Anda>
 - Halaman tampil normal melalui localhost.
 - Foto profil, navigasi, tampilan responsif, dan JavaScript dari P5 masih berfungsi.
-- Tidak ada galat. Belum ada kode PHP baru.
 - Commit: catat pemeriksaan awal PHP di pertemuan-06\README.md
 
 ### 2. Tag PHP dan echo
 
-- Kode uji ditambahkan di index.php, setelah tag `<body>` dan sebelum `<header>`:
-
-```php
-  <?php
-  // Pengujian awal eksekusi PHP.
-  echo "PHP berhasil dijalankan.";
-  ?>
-```
-
-- Teks "PHP berhasil dijalankan." tampil di halaman.
-- View Page Source (Ctrl+U) hanya menampilkan teks hasilnya, tanpa kode PHP mentah.
-- Tidak ada galat.
+- Kode uji `echo "PHP berhasil dijalankan.";` ditambahkan setelah tag `<body>` dan sebelum `<header>`.
+- Teks tampil di halaman. View Page Source (Ctrl+U) hanya menampilkan hasilnya, tanpa kode PHP mentah.
 - Kode uji dihapus setelah pengujian selesai.
 - Commit: pengujian komentar, echo, tag dasar PHP
 
 ### 3. Komentar, echo, dan print
 
-- Kode uji ditambahkan di index.php, setelah tag `<body>` dan sebelum `<header>`:
-
-```php
-  <?php
-  // Komentar satu baris.
-  echo "Keluaran menggunakan echo.";
-
-  /*
-  Komentar beberapa baris.
-  Komentar ini tidak ditampilkan pada halaman.
-  */
-  ?>
-```
-
-- Uji echo: teks "Keluaran menggunakan echo." tampil di halaman.
-- Isi komentar (satu baris maupun beberapa baris) tidak tampil di halaman dan tidak muncul di View Page Source.
-- Uji print dilakukan terpisah dengan mengganti baris echo menjadi `print "Keluaran menggunakan print.";`. Teks "Keluaran menggunakan print." tampil di halaman.
-- Perbedaan yang diamati: echo dan print sama-sama menghasilkan keluaran teks di halaman, sedangkan komentar hanya keterangan di kode dan tidak ditampilkan.
-- Tidak ada galat.
+- `echo` dan `print` diuji terpisah dan sama-sama menampilkan teks di halaman.
+- Isi komentar (satu baris dan beberapa baris) tidak tampil di halaman.
 - Kode uji dihapus setelah pengujian selesai.
 - Commit: mempelajari komentar dan keluaran dengan echo dan print di PHP
 
-### 4. Perbedaan Keluaran HTML Statis dan Keluaran Dinamis PHP
+### 4. HTML Statis dan Keluaran PHP
 
-- Kode uji ditambahkan di index.php, setelah tag `<body>` dan sebelum `<header>`:
-
-```php
-  <p>Konten HTML statis.</p>
-  <?php
-  echo "<p>Konten yang dihasilkan oleh PHP.</p>";
-  ?>
-```
-
-- Kedua teks tampil di halaman: "Konten HTML statis." dan "Konten yang dihasilkan oleh PHP.".
-- View Page Source (Ctrl+U) menampilkan kedua paragraf sebagai HTML biasa. Kode PHP tidak muncul mentah, artinya sudah diproses oleh peladen.
-- Perbedaan yang diamati: HTML statis ditulis langsung di markup, sedangkan keluaran PHP dihasilkan oleh instruksi program lalu disertakan dalam respons HTML. Hasilnya di peramban sama-sama berupa paragraf.
-- Tidak ada galat.
+- Paragraf HTML statis dan paragraf hasil `echo` sama-sama tampil di halaman.
+- Di View Page Source keduanya berupa HTML biasa, artinya PHP sudah diproses peladen.
 - Kode uji dihapus setelah pengujian selesai.
 - Commit: membandingkan keluaran tag HTML dan tag HTML di dalam tag PHP
 
 ### 5. Variabel PHP
 
-- Blok PHP ditambahkan di bagian paling awal index.php, sebelum `<!doctype html>`:
-
-```php
-  <?php
-  // P6: PHP dasar dan pemrograman sisi peladen
-  // Bagian 1: Variabel dan konstanta
-  $nim = "2611500015";
-  $namaMahasiswa = "Vincent Surya Julianto";
-  $programStudi = "TI";
-  $tahunAkademik = "2026/2027";
-  $semester = 1;
-  $ipk = 3.75;
-  $statusAktif = true;
-  $catatanTambahan = null;
-  ?>
-```
-
-- Variabel diawali tanda `$` dan nilainya ditetapkan dengan operator `=`. Nama variabel bersifat case sensitive.
-- Halaman tetap tampil normal dan tidak muncul galat PHP.
-- Nama dan nilai variabel sudah diperiksa ulang, tidak ada salah ketik.
-- Variabel belum ditampilkan di halaman, hanya dideklarasikan.
+- Blok PHP ditambahkan di bagian paling awal index.php, sebelum `<!doctype html>`, berisi variabel `$nim`, `$namaMahasiswa`, `$programStudi`, `$tahunAkademik`, `$semester`, `$ipk`, `$statusAktif`, dan `$catatanTambahan`.
+- Halaman tetap tampil normal tanpa galat.
 - Commit: menambahkan deklarasi variabel PHP
 
 ### 6. Konstanta PHP
 
-- Dua konstanta ditambahkan di blok PHP yang sama di index.php, setelah deklarasi variabel dan sebelum tag penutup `?>`:
-
-```php
-  const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
-  const PROFIL_GITHUB = "<username GitHub Anda>";
-```
-
-- Konstanta dideklarasikan dengan `const` dan ditulis tanpa tanda `$`, baik saat didefinisikan maupun dipanggil.
-- Penulisan `const`, nama konstanta, tanda kutip, dan titik koma sudah diperiksa di kode.
-- Halaman tetap tampil normal melalui localhost dan tidak muncul galat PHP.
-- Pada tahap ini hanya keberadaan deklarasi yang diperiksa. Penggunaan konstanta di halaman diuji pada tahap berikutnya (D.4).
+- Konstanta `NAMA_MATA_KULIAH` dan `PROFIL_GITHUB` ditambahkan dengan `const` di blok PHP yang sama.
+- Penulisan konstanta diperiksa di kode, halaman tetap tampil normal tanpa galat.
 - Commit: menambahkan konstanta PHP
 
-### 7. Variabel dan Konstanta pada Halaman Profil
+### 7. Variabel dan Konstanta pada Halaman
 
-- Pada section `id="home"`, setelah judul Selamat Datang, paragraf lama diganti dengan paragraf berikut:
-
-```php
-  <p>Halo, saya <strong><?php echo $namaMahasiswa; ?></strong>. Saya sedang mempelajari matakuliah <strong><?php print NAMA_MATA_KULIAH; ?></strong> pada tahun akademik <?php echo $tahunAkademik; ?>.</p>
-```
-
-- Pada bagian Kontak, atribut `href` tautan GitHub diganti agar memakai konstanta `PROFIL_GITHUB`, teks tautan tetap dipertahankan:
-
-```php
-  <a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">profil GitHub saya</a>
-```
-
-- `echo` dipakai untuk menampilkan variabel, `print` dipakai untuk menampilkan konstanta nama mata kuliah.
-- Hasil pengujian: nama mahasiswa, nama mata kuliah, dan tahun akademik tampil sesuai nilai yang dideklarasikan.
-- Struktur dan tampilan halaman dari P5 tetap dipertahankan.
-- Tautan GitHub diklik dan mengarah ke alamat yang dibentuk dari nilai `PROFIL_GITHUB`.
-- Tidak ada galat.
+- Nama mahasiswa, nama mata kuliah, dan tahun akademik ditampilkan di bagian Selamat Datang dengan `echo` dan `print`.
+- Atribut `href` tautan GitHub di bagian Kontak memakai `PROFIL_GITHUB`. Tautan diklik dan mengarah ke profil yang benar.
 - Commit: menampilkan data mahasiswa dengan variabel dan konstanta
 
-### 8. Operator Aritmetika dan Penugasan
+### 8. Operator Aritmetika
 
-- Pada blok PHP di bagian awal index.php, setelah deklarasi variabel dan konstanta, ditambahkan:
-
-```php
-  // Bagian 2: Operator
-  $batasSemester = 8;
-  $sisaSemester = $batasSemester - $semester;
-```
-
-- Pada bagian Tentang Saya, di dalam `<article>` Profil Singkat, setelah judul `<h3>Profil Singkat</h3>` ditambahkan paragraf:
-
-```php
-  <p>Sisa semester hingga batas: <?php echo $sisaSemester; ?></p>
-```
-
-- Operator `-` dipakai untuk pengurangan dan operator `=` untuk memberi nilai ke variabel.
-- Hasil pengujian: halaman tampil normal tanpa galat PHP dan menampilkan "Sisa semester hingga batas: 6" (batas semester 8 dikurangi semester 2).
-- Perubahan diperiksa dengan `git status` sebelum commit.
+- Ditambahkan `$batasSemester = 8` dan `$sisaSemester = $batasSemester - $semester`.
+- Halaman menampilkan sisa semester sesuai hasil perhitungan.
 - Commit: menambahkan operator aritmetika PHP
 
 ### 9. Operator Perbandingan dan Logika
 
-- Pada blok PHP di bagian awal index.php, setelah deklarasi `$sisaSemester`, ditambahkan:
-
-```php
-  $semesterValid = $semester >= 1 && $semester <= $batasSemester;
-  $statusSemester = ($semesterValid && $statusAktif) ? "Sesuai rentang" : "Perlu diperiksa";
-```
-
-- Operator `>=` dan `<=` memeriksa apakah semester berada dalam rentang 1 sampai batas semester. Operator `&&` menggabungkan hasil pemeriksaan rentang dengan status aktif mahasiswa. Operator ternary `? :` memilih teks berdasarkan hasil pemeriksaan.
-- Pada bagian Tentang Saya, di dalam `<article>` Profil Singkat, setelah paragraf sisa semester ditambahkan:
-
-```php
-  <p>Pemeriksaan rentang semester: <?php echo $statusSemester; ?></p>
-```
-
-- Hasil pengujian dengan `$semester = 2` dan `$statusAktif = true`: halaman menampilkan "Pemeriksaan rentang semester: Sesuai rentang".
-- Pengujian kondisi lain: `$semester` diubah sementara menjadi 9, halaman dimuat ulang, dan keluaran berubah menjadi "Pemeriksaan rentang semester: Perlu diperiksa".
-- Setelah pengujian, `$semester` dikembalikan menjadi 2 dan keluaran kembali menjadi "Sesuai rentang".
-- Tidak ada galat.
+- Ditambahkan `$semesterValid` (operator `>=`, `<=`, dan `&&`) dan `$statusSemester` (operator ternary).
+- Halaman menampilkan "Sesuai rentang". Dengan `$semester` diubah sementara menjadi 9, keluaran menjadi "Perlu diperiksa". Nilai dikembalikan setelah uji.
 - Commit: menerapkan pemeriksaan rentang semester
 
 ### 10. Percabangan if-elseif-else
 
-- Pada blok PHP di bagian awal index.php, setelah deklarasi variabel operator, ditambahkan:
-
-```php
-  // Bagian 3: Percabangan if-elseif-else
-  if ($semester < 3) {
-    $keteranganSemester = "Semester awal";
-  } elseif ($semester <= 6) {
-    $keteranganSemester = "Semester menengah";
-  } else {
-    $keteranganSemester = "Semester akhir";
-  }
-```
-
-- Semester kurang dari 3 dikategorikan semester awal, sampai dengan 6 semester menengah, dan di atas 6 semester akhir.
-- Pada bagian Tentang Saya, di dalam `<article>` Profil Singkat, ditambahkan:
-
-```php
-  <p>Semester: <?php echo $semester . " (" . $keteranganSemester . ")"; ?></p>
-```
-
-- Operator titik (`.`) dipakai untuk menggabungkan teks dan nilai menjadi satu keluaran.
-- Hasil pengujian dengan `$semester = 2`: halaman menampilkan "Semester: 2 (Semester awal)".
-- Pengujian kondisi lain: `$semester = 4` menghasilkan "Semester menengah", dan `$semester = 7` menghasilkan "Semester akhir". Setelah pengujian, `$semester` dikembalikan menjadi 2.
-- Galat yang ditemukan (saat memeriksa kode di GitHub): pada tahap E.3, paragraf pemeriksaan rentang semester salah ditempatkan karena kode tidak menimpa bagian `section` sampai `article` yang lama. Akibatnya `<section id="about">`, `<h2>Tentang Saya</h2>`, `<article>`, dan `<h3>Profil Singkat</h3>` muncul dua kali, sehingga judul "Tentang Saya" dan "Profil Singkat" tampil ganda dan paragraf berada di urutan yang salah.
-- Perbaikan: blok ganda dihapus sehingga hanya ada satu `section`, satu `article`, dan satu `<h3>Profil Singkat</h3>`, dan paragraf pemeriksaan rentang semester dipindahkan ke tempat yang benar. Setelah dimuat ulang, judul hanya tampil satu kali.
+- Keterangan semester ditentukan dari nilai `$semester`: kurang dari 3 "Semester awal", sampai 6 "Semester menengah", di atas 6 "Semester akhir".
+- Diuji dengan nilai 4 dan 7, hasilnya sesuai. Nilai dikembalikan setelah uji.
+- Galat: paragraf pemeriksaan rentang semester (tahap 9) salah ditempatkan karena kode ditempel tanpa menimpa bagian `section` sampai `article` yang lama. Akibatnya judul "Tentang Saya" dan "Profil Singkat" muncul dua kali.
+- Perbaikan: blok ganda dihapus sehingga hanya ada satu `section` dan satu `article`, lalu paragraf dipindahkan ke tempat yang benar. Judul kini tampil satu kali.
 - Commit: menerapkan percabangan if elseif else
 
-### 11. Operator Ternary untuk Program Studi dan Status Mahasiswa
+### 11. Operator Ternary
 
-- Pada blok PHP di bagian awal index.php, setelah percabangan if-elseif-else, ditambahkan:
-  ```php
-  $namaProdi = ($programStudi == "SI") ? "Sistem Informasi" : (($programStudi == "TI") ? "Teknik Informatika" : "Lainnya");
-  ```
-- Jika `$programStudi` bernilai SI hasilnya "Sistem Informasi", jika TI hasilnya "Teknik Informatika", selain itu "Lainnya".
-- Pada bagian Tentang Saya, di dalam `<article>` Profil Singkat, ditambahkan dua paragraf:
-  ```php
-  <p>Program Studi: <?php echo $namaProdi . " (" . $programStudi . ")"; ?></p>
-  <p>Status mahasiswa: <?php echo $statusAktif ? "Aktif" : "Tidak aktif"; ?></p>
-  ```
-- Paragraf pertama menampilkan nama program studi beserta kodenya. Paragraf kedua memakai operator ternary untuk menampilkan status berdasarkan nilai boolean `$statusAktif`.
-- Hasil pengujian dengan `$programStudi = "TI"` dan `$statusAktif = true`: halaman menampilkan "Program Studi: Teknik Informatika (TI)" dan "Status mahasiswa: Aktif".
-- Pengujian kondisi alternatif: `$programStudi` diubah sementara menjadi SI dan `$statusAktif` menjadi false. Halaman menampilkan "Program Studi: Sistem Informasi (SI)" dan "Status mahasiswa: Tidak aktif".
-- Setelah pengujian, kedua variabel dikembalikan ke nilai awal, yaitu TI dan true.
-- Tidak ada galat.
+- Ditambahkan `$namaProdi` dan paragraf Program Studi serta Status mahasiswa.
+- `TI` dan `true` menampilkan "Teknik Informatika (TI)" dan "Aktif". Setelah diubah sementara menjadi `SI` dan `false`, menampilkan "Sistem Informasi (SI)" dan "Tidak aktif". Nilai dikembalikan.
 - Commit: menerapkan operator ternary pada profil mahasiswa
 
-### 12. Percabangan switch-case-default
+### 12. Percabangan switch
 
-- Pada blok PHP di bagian awal index.php, setelah deklarasi `$namaProdi`, ditambahkan:
-  ```php
-  // Bagian 4: Percabangan switch-case-default
-  switch ($programStudi) {
-    case "SI":
-      $fokusProgramStudi = "Sistem informasi dan proses bisnis";
-      break;
-    case "TI":
-      $fokusProgramStudi = "Komputasi dan pengembangan perangkat lunak";
-      break;
-    default:
-      $fokusProgramStudi = "Belum ditentukan";
-  }
-  ```
-- Setiap `case` menangani nilai program studi tertentu, `break` mengakhiri pelaksanaan cabang yang sesuai, dan `default` dipakai jika tidak ada nilai yang cocok. `break` tidak wajib pada `default` karena merupakan cabang terakhir.
-- Pada bagian Tentang Saya, di dalam `<article>` Profil Singkat, ditambahkan:
-  ```php
-  <p>Fokus program studi: <?php echo $fokusProgramStudi; ?></p>
-  ```
-- Hasil pengujian dengan `$programStudi = "TI"`: halaman menampilkan "Fokus program studi: Komputasi dan pengembangan perangkat lunak".
-- Pengujian cabang lain: `$programStudi` diubah sementara menjadi SI dan keluaran menjadi "Sistem informasi dan proses bisnis". Kemudian diubah menjadi MI (nilai yang tidak ditangani case) dan keluaran menjadi "Belum ditentukan".
-- Setelah pengujian, `$programStudi` dikembalikan menjadi TI.
-- Tidak ada galat.
+- Fokus program studi ditentukan dengan `switch` dan `default`.
+- `TI` dan `SI` menampilkan fokus masing-masing, sedangkan `MI` menampilkan "Belum ditentukan". Nilai dikembalikan.
 - Commit: menerapkan percabangan switch case
 
-### 13. Perulangan for untuk Target Belajar
+### 13. Perulangan for
 
-- Pada bagian Tentang Saya, judul Target Belajar dan daftar statis yang lama diganti dengan kode berikut:
-  ```php
-  <h3>Target Belajar (Perulangan for)</h3>
-  <ol>
-    <?php
-    // Perulangan for tanpa array; materi larik dibahas pada P9.
-    for ($i = 1; $i <= 5; $i++) {
-      echo "<li>Target belajar ke-" . $i . ": ";
-      switch ($i) {
-        case 1:
-          echo "Memahami sintaks dasar PHP.";
-          break;
-        case 2:
-          echo "Menggunakan variabel dan konstanta.";
-          break;
-        case 3:
-          echo "Menerapkan operator dan percabangan.";
-          break;
-        case 4:
-          echo "Menggunakan perulangan for dan while.";
-          break;
-        default:
-          echo "Belum dipetakan";
-          break;
-      }
-      echo "</li>";
-    }
-    ?>
-  </ol>
-  ```
-- Perulangan `for` memakai penghitung `$i` yang dimulai dari 1 dan bertambah satu selama nilainya tidak melebihi 5. Setiap pengulangan menghasilkan satu butir daftar, dan `switch` menentukan teks target berdasarkan nilai `$i`.
-- Empat target pertama ditentukan oleh `case`, sedangkan target kelima memakai `default`. Array tidak digunakan karena materinya dibahas pada P9.
-- Hasil pengujian: bagian Target Belajar menampilkan lima butir, mulai dari "Target belajar ke-1: Memahami sintaks dasar PHP." sampai "Target belajar ke-5: Belum dipetakan".
-- Tidak ada galat.
+- Daftar Target Belajar yang statis diganti dengan perulangan `for` dan `switch`.
+- Lima butir tampil, butir kelima "Belum dipetakan".
 - Commit: menerapkan perulangan for untuk target belajar
 
-### 14. Perulangan while untuk Nomor Semester
+### 14. Perulangan while
 
-- Pada bagian Tentang Saya, setelah daftar Target Belajar, ditambahkan:
-  ```php
-  <h3>Semester (Perulangan while):</h3>
-  <ol>
-    <?php
-    $nomorSemester = 1;
-    while ($nomorSemester <= 3) {
-      echo "<li>Semester " . $nomorSemester . "</li>";
-      $nomorSemester++;
-    }
-    ?>
-  </ol>
-  ```
-- Perulangan `while` menjalankan instruksi selama kondisi bernilai true. Variabel `$nomorSemester` dimulai dari 1 dan dipakai sebagai penghitung.
-- Pernyataan `$nomorSemester++` menaikkan nilai penghitung satu per satu agar perulangan bergerak menuju kondisi berhenti. Tanpa pernyataan itu, kondisi `$nomorSemester <= 3` tetap benar dan perulangan tidak berhenti secara normal.
-- Hasil pengujian: halaman menampilkan daftar "Semester 1", "Semester 2", dan "Semester 3".
-- Tidak ada galat.
+- Ditambahkan daftar nomor semester dengan `while` dan `$nomorSemester++`.
+- Daftar Semester 1, 2, dan 3 tampil.
 - Commit: menerapkan perulangan while untuk nomor semester
 
-### 15. Menampilkan IPK dengan number_format()
+### 15. number_format()
 
-- Pada bagian Tentang Saya, di dalam `<article>` Profil Singkat, ditambahkan:
-  ```php
-  <p>IPK: <?php echo number_format($ipk, 2, ',', '.'); ?></p>
-  ```
-- Fungsi `number_format()` memformat angka sesuai jumlah desimal dan pemisah yang ditentukan. Parameternya: nilai `$ipk`, 2 angka desimal, koma sebagai pemisah desimal, dan titik sebagai pemisah ribuan.
-- Hasil pengujian dengan `$ipk = 3.75`: halaman menampilkan "IPK: 3,75" dengan dua angka desimal.
-- Tidak ada galat.
+- IPK ditampilkan dengan `number_format($ipk, 2, ',', '.')`.
+- Halaman menampilkan "IPK: 3,75".
 - Commit: memformat tampilan IPK dengan number_format
 
-### 16. Memeriksa Nilai NULL
+### 16. Pemeriksaan NULL
 
-- Pada bagian Tentang Saya, di dalam `<article>` Profil Singkat, ditambahkan:
-  ```php
-  <p>Catatan tambahan: <?php echo $catatanTambahan === null ? "Belum ada" : $catatanTambahan; ?></p>
-  ```
-- Nilai `NULL` menunjukkan bahwa variabel belum memiliki nilai. Operator identik `===` dipakai untuk memeriksa apakah nilai variabel benar-benar `NULL`, termasuk tipe datanya. Operator ternary memilih keluaran berdasarkan hasil pemeriksaan.
-- Hasil pengujian dengan `$catatanTambahan = null`: halaman menampilkan "Catatan tambahan: Belum ada".
-- Pengujian kondisi alternatif: `$catatanTambahan` diubah sementara menjadi "Catatan praktik PHP" di blok PHP bagian awal, halaman dimuat ulang, dan keluaran menjadi "Catatan tambahan: Catatan praktik PHP".
-- Setelah pengujian, nilai variabel dikembalikan menjadi `null` dan keluaran kembali menjadi "Catatan tambahan: Belum ada".
-- Tidak ada galat.
+- Catatan tambahan diperiksa dengan `=== null` dan operator ternary.
+- Nilai `null` menampilkan "Belum ada". Setelah diubah sementara menjadi "Catatan praktik PHP", teks itu yang tampil. Nilai dikembalikan ke `null`.
 - Commit: menampilkan catatan tambahan berdasarkan nilai null
 
-### 17. Menampilkan Tahun dengan Fungsi date()
+### 17. date() pada Footer
 
-- Pada elemen `<footer>`, paragraf footer yang masih memakai tahun dan identitas statis diganti dengan:
-  ```php
-  <p>&copy; <?= date("Y") ?> <?php echo $namaMahasiswa; ?> [<?= $nim ?>]</p>
-  ```
-- Fungsi `date("Y")` menghasilkan tahun empat digit sesuai tanggal pada lingkungan peladen saat program dijalankan.
-- Hasil pengujian: footer menampilkan simbol hak cipta, tahun saat ini, nama mahasiswa, dan NIM, yaitu "© 2026 Vincent Surya Julianto [2611500015]".
-- Tahun yang tampil sesuai dengan tahun pada lingkungan peladen saat pengujian.
-- Tidak ada galat.
+- Footer diganti dengan `date("Y")`, nama mahasiswa, dan NIM.
+- Footer menampilkan tahun saat ini, nama, dan NIM.
 - Commit: menampilkan tahun dinamis pada footer
 
-### 18. Sintaks Keluaran Singkat <?= ... ?>
+### 18. Sintaks <?= ... ?>
 
-- Tag `<?= ... ?>` adalah sintaks singkat PHP untuk menampilkan nilai suatu ekspresi. Sintaks ini dipakai pada tiga tempat: konstanta `PROFIL_GITHUB`, tahun dari `date("Y")`, dan variabel `$nim`.
-- Kode tautan GitHub pada bagian Kontak diperiksa kembali dan sudah memakai konstanta `PROFIL_GITHUB`:
-  ```php
-  <p>
-    Kunjungi
-    <a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">profil GitHub saya</a>.
-  </p>
-  ```
-- Footer yang dibuat pada tahap sebelumnya juga diperiksa. Bagian `<?= date("Y") ?>` dan `<?= $nim ?>` sudah memakai sintaks keluaran singkat, sehingga tidak ada keluaran baru yang ditambahkan hanya untuk mengulang demonstrasi.
-- Hasil pengujian: tautan GitHub tampil dan mengarah ke alamat yang dibentuk dari nilai `PROFIL_GITHUB`, sedangkan footer menampilkan tahun dan NIM.
-- Tidak ada galat.
-- Commit: tidak ada perubahan kode baru pada tahap ini, sehingga tidak dibuat commit tambahan.
+- Sintaks singkat sudah dipakai pada tautan GitHub (`PROFIL_GITHUB`) dan footer (`date("Y")` dan `$nim`).
+- Keduanya tampil dan berfungsi. Tidak ada perubahan kode baru, jadi tidak ada commit tambahan.
 
-### 19. Penyesuaian Atribut action pada Formulir
+### 19. Atribut action Formulir
 
-- Pada P5, formulir memakai atribut `action="index.html"`. Karena halaman utama P6 sudah diubah menjadi `index.php`, atribut `action` disesuaikan agar tujuan pengiriman formulir mengarah ke halaman utama P6.
-- Pada elemen `<form>` di bagian Kontak, atribut `action` diubah menjadi `index.php`:
-  ```html
-  <form id="contactForm" action="index.php" method="get" novalidate></form>
-  ```
-- Pembahasan pada tahap ini hanya mencakup perubahan tujuan formulir. Pemrosesan data formulir dengan PHP dibahas pada P7.
-- Hasil pemeriksaan: atribut `action` pada formulir sudah bernilai `index.php`, dan halaman tetap tampil normal tanpa galat.
+- Atribut `action` formulir di bagian Kontak diubah dari `index.html` menjadi `index.php`.
+- Halaman tetap tampil normal tanpa galat.
 - Commit: menyesuaikan action formulir ke index.php
+
+## Pengujian Akhir
+
+Seluruh halaman dijalankan melalui localhost dan semua keluaran PHP, percabangan, serta perulangan tampil sesuai yang diharapkan. Semua perubahan sudah di-commit dan di-push ke GitHub.
