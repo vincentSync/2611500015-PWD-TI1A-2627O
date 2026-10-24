@@ -290,3 +290,24 @@ Alamat proyek: http://localhost/pwd/2627o/ti1a/2611500015-PWD-TI1A-2627O/pertemu
 - Hasil pengujian: bagian Target Belajar menampilkan lima butir, mulai dari "Target belajar ke-1: Memahami sintaks dasar PHP." sampai "Target belajar ke-5: Belum dipetakan".
 - Tidak ada galat.
 - Commit: menerapkan perulangan for untuk target belajar
+
+### 14. Perulangan while untuk Nomor Semester
+
+- Pada bagian Tentang Saya, setelah daftar Target Belajar, ditambahkan:
+  ```php
+  <h3>Semester (Perulangan while):</h3>
+  <ol>
+    <?php
+    $nomorSemester = 1;
+    while ($nomorSemester <= 3) {
+      echo "<li>Semester " . $nomorSemester . "</li>";
+      $nomorSemester++;
+    }
+    ?>
+  </ol>
+  ```
+- Perulangan `while` menjalankan instruksi selama kondisi bernilai true. Variabel `$nomorSemester` dimulai dari 1 dan dipakai sebagai penghitung.
+- Pernyataan `$nomorSemester++` menaikkan nilai penghitung satu per satu agar perulangan bergerak menuju kondisi berhenti. Tanpa pernyataan itu, kondisi `$nomorSemester <= 3` tetap benar dan perulangan tidak berhenti secara normal.
+- Hasil pengujian: halaman menampilkan daftar "Semester 1", "Semester 2", dan "Semester 3".
+- Tidak ada galat.
+- Commit: menerapkan perulangan while untuk nomor semester
