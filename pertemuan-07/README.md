@@ -2,5 +2,9 @@
 
 Pada pertemuan ini saya melakukan:
 
-1. menyalin artefak pertemuan - 06 ke pertemuan - 07 untuk digunakan sebagai baseline
-2.
+1. Menyalin artefak pertemuan-06 ke pertemuan-07 untuk digunakan sebagai baseline.
+2. Menguji `http://localhost/pwd/0344300002-PWD-TI1A-2627O/pertemuan-07/` lewat Laragon, hasilnya sama dengan pertemuan-06.
+3. Memeriksa formulir pada `index.php` (atribut `name`, `method`, `action`) dan event `submit` pada `script.js`.
+4. Mempelajari metode GET: data dikirim lewat URL (query string) dan dibaca PHP dengan `$_GET`.
+5. Menambahkan kode `$_GET['nama']` pada `index.php` lalu mengujinya lewat URL `?nama=Andi`, `?nama=Budi%20Anduk`, dan tanpa parameter.
+6. Mempelajari URL dengan beberapa parameter: tanda `?` memisahkan alamat dan parameter, tanda `&` memisahkan antarparameter, dan `%40` adalah `@`.
