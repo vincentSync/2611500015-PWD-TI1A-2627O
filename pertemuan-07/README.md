@@ -9,3 +9,4 @@ Pada pertemuan ini saya melakukan:
 5. Menambahkan kode `$_GET['nama']` pada `index.php` lalu mengujinya lewat URL `?nama=Andi`, `?nama=Budi%20Anduk`, dan tanpa parameter.
 6. Mempelajari URL dengan beberapa parameter: tanda `?` memisahkan alamat dan parameter, tanda `&` memisahkan antarparameter, dan `%40` adalah `@`.
 7. Mengubah `script.js` dengan menambahkan `contactForm.submit();` setelah validasi berhasil, lalu menguji pengiriman formulir dengan GET. Data terkirim lewat URL dan PHP menampilkan nilai `nama`. Jika ada kolom kosong atau tidak valid, formulir tidak terkirim.
+8. Menyalin `index.php` menjadi `indexGet.php` sebagai demonstrasi GET, lalu mengubah `action` menjadi `indexGet.php`. Saat diuji, data terkirim lewat URL dan nama tampil di halaman.
