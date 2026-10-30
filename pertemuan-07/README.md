@@ -10,3 +10,4 @@ Pada pertemuan ini saya melakukan:
 6. Mempelajari URL dengan beberapa parameter: tanda `?` memisahkan alamat dan parameter, tanda `&` memisahkan antarparameter, dan `%40` adalah `@`.
 7. Mengubah `script.js` dengan menambahkan `contactForm.submit();` setelah validasi berhasil, lalu menguji pengiriman formulir dengan GET. Data terkirim lewat URL dan PHP menampilkan nilai `nama`. Jika ada kolom kosong atau tidak valid, formulir tidak terkirim.
 8. Menyalin `index.php` menjadi `indexGet.php` sebagai demonstrasi GET, lalu mengubah `action` menjadi `indexGet.php`. Saat diuji, data terkirim lewat URL dan nama tampil di halaman.
+9. Mengubah atribut `method` pada formulir utama `index.php` dari `get` menjadi `post`, lalu memeriksa kode sumber (CTRL+U) untuk memastikan formulir memakai `method="post"`. Tampilan formulir, navigasi, dan tombol tetap tersedia, sedangkan demonstrasi GET tetap ada di `indexGet.php`.
