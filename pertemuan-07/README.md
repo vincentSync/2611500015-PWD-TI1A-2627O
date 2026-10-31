@@ -18,3 +18,4 @@ Pada pertemuan ini saya melakukan:
 14. Menambahkan validasi nilai pilihan pada `index.php` (F.4): `jenis_pesan`, `prodi`, dan `minat` diperiksa dengan `in_array()` agar hanya nilai yang diizinkan yang diterima.
 15. Menambahkan normalisasi data masukan dengan `trim((string) ...)` (F.5) yang diletakkan sebelum blok validasi.
 16. Menampilkan pesan kesalahan validasi PHP pada `index.php` (F.6 Tahap 1) dengan `htmlspecialchars()`. Pengujian dilakukan dengan menonaktifkan `script.js` sementara, lalu mengirim formulir kosong, mengisi email `bukan-email`, dan mengirim tanpa memilih minat. Pesan kesalahan tampil sesuai kondisi, lalu `script.js` diaktifkan kembali.
+17. Menampilkan data yang diterima melalui POST pada `index.php` (F.6 Tahap 2) menggunakan `htmlspecialchars()`, `foreach` untuk minat, dan `nl2br()` untuk pesan. Diuji dengan data valid dan dengan teks `<b>Mahasiswa</b>` pada kolom pesan. Data tampil sesuai isian dan teks HTML ditampilkan sebagai teks biasa.
