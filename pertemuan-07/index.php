@@ -13,6 +13,52 @@ $prodi = $_POST['prodi'] ?? '';
 $pesan = $_POST['pesan'] ?? '';
 $minat = $_POST['minat'] ?? [];
 
+$pesanKesalahan = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (trim($nama ?? '') === '') {
+$pesanKesalahan .= 'Nama lengkap wajib diisi. ';
+}
+if (trim($email) === '') {
+$pesanKesalahan .= 'Email wajib diisi. ';
+}
+if (trim($semesterForm) === '') {
+$pesanKesalahan .= 'Semester wajib diisi. ';
+}
+if (trim($tanggal) === '') {
+$pesanKesalahan .= 'Tanggal kunjungan wajib diisi. ';
+}
+if ($jenisPesan === '') {
+$pesanKesalahan .= 'Jenis pesan wajib dipilih. ';
+}
+if ($prodi === '') {
+$pesanKesalahan .= 'Program studi wajib dipilih. ';
+}
+if (trim($pesan) === '') {
+$pesanKesalahan .= 'Pesan wajib diisi. ';
+}
+if (empty($minat)) {
+$pesanKesalahan .= 'Minat wajib dipilih minimal satu. ';
+}
+if (trim($semesterForm) !== '') {
+$semesterValid = filter_var(
+$semesterForm,
+FILTER_VALIDATE_INT
+);
+if (
+$semesterValid === false ||
+$semesterValid < 1 ||
+$semesterValid > 14
+) {
+$pesanKesalahan .= 'Semester harus berupa bilangan bulat antara 1 dan 14. ';
+}
+}
+if (trim($email) !== '') {
+if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+$pesanKesalahan .= 'Format email tidak valid. ';
+}
+}
+}
+
   // P6: PHP dasar dan pemrograman sisi peladen
   // Bagian 1: Variabel dan konstanta
   $nim = "2611500015";
