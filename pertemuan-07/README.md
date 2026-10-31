@@ -17,3 +17,4 @@ Pada pertemuan ini saya melakukan:
 13. Menambahkan validasi format di sisi peladen pada `index.php` (F.3): semester diperiksa dengan `filter_var()` `FILTER_VALIDATE_INT` dan harus antara 1 dan 14, email diperiksa dengan `FILTER_VALIDATE_EMAIL`. Pemeriksaan format hanya dijalankan jika kolom tidak kosong.
 14. Menambahkan validasi nilai pilihan pada `index.php` (F.4): `jenis_pesan`, `prodi`, dan `minat` diperiksa dengan `in_array()` agar hanya nilai yang diizinkan yang diterima.
 15. Menambahkan normalisasi data masukan dengan `trim((string) ...)` (F.5) yang diletakkan sebelum blok validasi.
+16. Menampilkan pesan kesalahan validasi PHP pada `index.php` (F.6 Tahap 1) dengan `htmlspecialchars()`. Pengujian dilakukan dengan menonaktifkan `script.js` sementara, lalu mengirim formulir kosong, mengisi email `bukan-email`, dan mengirim tanpa memilih minat. Pesan kesalahan tampil sesuai kondisi, lalu `script.js` diaktifkan kembali.

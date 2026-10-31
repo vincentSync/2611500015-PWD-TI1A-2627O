@@ -1,4 +1,8 @@
   <?php
+if (isset($_POST['nama'])) {
+$nama = $_POST['nama'];
+echo "Nama yang diterima: " . htmlspecialchars($nama, ENT_QUOTES, 'UTF-8');
+}
 // P7: penggunaan POST
 $nama = trim((string) ($_POST['nama'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
@@ -67,8 +71,9 @@ foreach ($minat as $topik) {
 if (!in_array($topik, $minatDiizinkan, true)) {
 $pesanKesalahan .= 'Pilihan topik tidak valid. ';
 break;
-    }
-  }
+     }
+   }
+ }
 }
 
   // P6: PHP dasar dan pemrograman sisi peladen
@@ -217,6 +222,11 @@ $nomorSemester++; // operator penugasan
 
       <section id="contact">
         <h2>Kontak</h2>
+        <?php if ($pesanKesalahan !== ''): ?>
+<p class="form-feedback-error">
+<?= htmlspecialchars($pesanKesalahan, ENT_QUOTES, 'UTF-8') ?>
+</p>
+<?php endif; ?>
       <p>
       Kunjungi
       <a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">profil GitHub saya</a>.
