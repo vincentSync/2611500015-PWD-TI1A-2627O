@@ -15,3 +15,5 @@ Pada pertemuan ini saya melakukan:
 11. Menambahkan pembacaan input lain dari `$_POST`, mengubah checkbox menjadi `name="minat[]"`, dan menyesuaikan selector `script.js`. Pengujian di `index.php` dan `indexGet.php`: memilih dua topik, satu topik, dan tanpa topik. Hasil: validasi mengenali pilihan topik dan menampilkan pesan saat tidak ada topik yang dipilih.
 12. Menambahkan validasi kelengkapan data di sisi peladen pada `index.php` (F.2): variabel `$pesanKesalahan` dan pemeriksaan wajib isi untuk semua input dengan `trim()` dan `empty()`.
 13. Menambahkan validasi format di sisi peladen pada `index.php` (F.3): semester diperiksa dengan `filter_var()` `FILTER_VALIDATE_INT` dan harus antara 1 dan 14, email diperiksa dengan `FILTER_VALIDATE_EMAIL`. Pemeriksaan format hanya dijalankan jika kolom tidak kosong.
+14. Menambahkan validasi nilai pilihan pada `index.php` (F.4): `jenis_pesan`, `prodi`, dan `minat` diperiksa dengan `in_array()` agar hanya nilai yang diizinkan yang diterima.
+15. Menambahkan normalisasi data masukan dengan `trim((string) ...)` (F.5) yang diletakkan sebelum blok validasi.

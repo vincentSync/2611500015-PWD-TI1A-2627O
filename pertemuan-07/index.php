@@ -1,16 +1,12 @@
   <?php
 // P7: penggunaan POST
-if (isset($_POST['nama'])) {
-$nama = $_POST['nama'];
-echo "Nama yang diterima: " . htmlspecialchars($nama, ENT_QUOTES, 'UTF-8');
-}
-
-$email = $_POST['email'] ?? '';
-$semesterForm = $_POST['semester'] ?? '';
-$tanggal = $_POST['tanggal'] ?? '';
-$jenisPesan = $_POST['jenis_pesan'] ?? '';
-$prodi = $_POST['prodi'] ?? '';
-$pesan = $_POST['pesan'] ?? '';
+$nama = trim((string) ($_POST['nama'] ?? ''));
+$email = trim((string) ($_POST['email'] ?? ''));
+$semesterForm = trim((string) ($_POST['semester'] ?? ''));
+$jenisPesan = trim((string) ($_POST['jenis_pesan'] ?? ''));
+$prodi = trim((string) ($_POST['prodi'] ?? ''));
+$pesan = trim((string) ($_POST['pesan'] ?? ''));
+$tanggal = trim((string) ($_POST['tanggal'] ?? ''));
 $minat = $_POST['minat'] ?? [];
 
 $pesanKesalahan = '';
@@ -57,6 +53,22 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 $pesanKesalahan .= 'Format email tidak valid. ';
 }
 }
+if (!in_array($jenisPesan, ['pertanyaan', 'saran'], true)) {
+$pesanKesalahan .= 'Jenis pesan tidak valid. ';
+}
+if (!in_array($prodi, ['SI', 'TI'], true)) {
+$pesanKesalahan .= 'Program studi tidak valid. ';
+}
+$minatDiizinkan = ['HTML', 'CSS'];
+if (!is_array($minat)) {
+$pesanKesalahan .= 'Format pilihan topik tidak valid. ';
+} else {
+foreach ($minat as $topik) {
+if (!in_array($topik, $minatDiizinkan, true)) {
+$pesanKesalahan .= 'Pilihan topik tidak valid. ';
+break;
+    }
+  }
 }
 
   // P6: PHP dasar dan pemrograman sisi peladen
