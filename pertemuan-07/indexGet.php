@@ -156,12 +156,10 @@ $nomorSemester++; // operator penugasan
       <a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">profil GitHub saya</a>.
       </p>
 
-        <form id="contactForm" action="index.php" method="get" novalidate>
-          <div class="form-group">
-            <label for="nama">Nama Lengkap</label><br />
         <form id="contactForm" action="indexGet.php" method="get" novalidate>
           <div class="form-group">
             <label for="nama">Nama Lengkap</label><br />
+            
             <input
               class="input-form"
               type="text"

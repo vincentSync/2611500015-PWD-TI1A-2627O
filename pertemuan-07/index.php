@@ -1,10 +1,6 @@
   <?php
 session_start();
 
-if (isset($_POST['nama'])) {
-$nama = $_POST['nama'];
-echo "Nama yang diterima: " . htmlspecialchars($nama, ENT_QUOTES, 'UTF-8');
-}
 // P7: penggunaan POST
 $nama = trim((string) ($_POST['nama'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
