@@ -1,6 +1,4 @@
-pada p7, saya melakukan:
+PADA PERTEMUAN-08 UTS SAYA MELAKUKAN ;
 
-1. menyalin artefak P6 untuk menjadi baseline P7
-2. menguji fitur pada P7, hasilnya jalan seperti P6.
-3. meremark event.preventDefault(); pada script.js dan mencoba superglobal $\_GET untuk menangkap nilai yang diisikan pada formulir.
-4. mencoba method post. hasilnya parameter tidak ditampilkan pada url, tetapi menggunakan echo superglobal $\_POST untuk menampilkan nilai dari input form.
+1. Mengekstrak bahan-pertemuan-08.zip ke folder pertemuan-08
+2. Menambahkan menu navigasi "Rencana Kegiatan" pada index.php yang mengarah ke section baru (#rencana-kegiatan)
