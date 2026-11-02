@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+   $daftarKategori = ["Akademik", "Organisasi", "Olahraga", "Seni dan Budaya", "Sosial"];
+
 // P7: Memproses data formulir dan menyimpannya ke dalam session.
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$nama = trim((string) ($_POST["nama"] ?? ""));
@@ -174,6 +176,52 @@ switch ($programStudi) {
 				</ol>
 			</article>
 		</section>
+
+<section id="rencana-kegiatan">
+	<h2>Rencana Kegiatan Mahasiswa</h2>
+
+	<form id="kegiatanForm" data-validation="kegiatan" action="index.php" method="post" novalidate>
+		<input type="hidden" name="form_kegiatan" value="1" />
+
+		<div class="form-group">
+			<label for="kg-nama">Nama Kegiatan</label><br />
+			<input class="input-form" type="text" id="kg-nama" name="nama_kegiatan"
+				placeholder="Contoh: Seminar Teknologi Web" minlength="3" maxlength="100" required />
+		</div>
+
+		<div class="form-group">
+			<label for="kg-kategori">Kategori Kegiatan</label><br />
+			<select class="input-form" id="kg-kategori" name="kategori_kegiatan" required>
+				<option value="">-- Pilih Kategori --</option>
+				<?php foreach ($daftarKategori as $kat): ?>
+					<option value="<?= htmlspecialchars($kat, ENT_QUOTES, "UTF-8") ?>"><?= htmlspecialchars($kat, ENT_QUOTES, "UTF-8") ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label for="kg-tanggal">Tanggal Pelaksanaan</label><br />
+			<input class="input-form" type="date" id="kg-tanggal" name="tanggal_pelaksanaan" required />
+		</div>
+
+		<div class="form-group">
+			<label for="kg-lokasi">Lokasi Kegiatan</label><br />
+			<input class="input-form" type="text" id="kg-lokasi" name="lokasi_kegiatan"
+				placeholder="Contoh: Aula Kampus" maxlength="100" required />
+		</div>
+
+		<div class="form-group">
+			<label for="kg-deskripsi">Deskripsi Kegiatan</label><br />
+			<textarea class="input-form" id="kg-deskripsi" name="deskripsi_kegiatan"
+				maxlength="300" placeholder="Jelaskan kegiatan Anda" required></textarea>
+		</div>
+
+		<button type="submit">Kirim</button>
+		<button type="reset">Batal</button>
+		<p class="form-feedback" data-form-feedback aria-live="polite"></p>
+	</form>
+
+</section>
 
 		<section id="contact">
 			<h2>Kontak</h2>
