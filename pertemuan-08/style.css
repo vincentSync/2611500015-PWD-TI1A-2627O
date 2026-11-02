@@ -247,3 +247,46 @@ footer p {
     display: none;
   }
 }
+
+/* Section Rencana Kegiatan Mahasiswa (mengikuti pola #contact) */
+#rencana-kegiatan {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 20px;
+  margin: 0;
+}
+#rencana-kegiatan h2 {
+  color: #003366;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 6px;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+#rencana-kegiatan label {
+  color: #1f2937;
+  font-weight: bold;
+}
+#rencana-kegiatan textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+#rencana-kegiatan button {
+  background-color: #003366;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px 14px;
+  margin: 8px 6px 0 0;
+  border: 1px solid #003366;
+  cursor: pointer;
+}
+.submission-result {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+}
+@media (min-width: 768px) {
+  #rencana-kegiatan {
+    grid-column: 1 / -1;
+  }
+}
