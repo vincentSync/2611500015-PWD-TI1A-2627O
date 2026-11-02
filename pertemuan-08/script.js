@@ -126,3 +126,65 @@ contactForms.forEach((contactForm) => {
     }
   });
 });
+
+// Validasi formulir Rencana Kegiatan Mahasiswa.
+const kegiatanForms = document.querySelectorAll(
+  'form[data-validation="kegiatan"]',
+);
+
+kegiatanForms.forEach((form) => {
+  const feedback = form.querySelector("[data-form-feedback]");
+
+  const tampilkanKesalahan = (teks) => {
+    if (feedback) {
+      feedback.textContent = teks;
+      feedback.className = "form-feedback-error";
+    }
+  };
+
+  const bersihkanFeedback = () => {
+    if (feedback) {
+      feedback.textContent = "";
+      feedback.className = "form-feedback";
+    }
+  };
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    bersihkanFeedback();
+
+    const nama = form.elements.namedItem("nama_kegiatan").value.trim();
+    const kategori = form.elements.namedItem("kategori_kegiatan").value;
+    const tanggal = form.elements.namedItem("tanggal_pelaksanaan").value;
+    const lokasi = form.elements.namedItem("lokasi_kegiatan").value.trim();
+    const deskripsi = form.elements
+      .namedItem("deskripsi_kegiatan")
+      .value.trim();
+
+    if (nama.length < 3 || nama.length > 100) {
+      tampilkanKesalahan("Nama kegiatan harus diisi 3 sampai 100 karakter.");
+      return;
+    }
+    if (kategori === "") {
+      tampilkanKesalahan("Pilih kategori kegiatan.");
+      return;
+    }
+    if (tanggal === "") {
+      tampilkanKesalahan("Tanggal pelaksanaan harus diisi.");
+      return;
+    }
+    if (lokasi.length < 3 || lokasi.length > 100) {
+      tampilkanKesalahan("Lokasi kegiatan harus diisi 3 sampai 100 karakter.");
+      return;
+    }
+    if (deskripsi.length < 10 || deskripsi.length > 300) {
+      tampilkanKesalahan("Deskripsi harus diisi 10 sampai 300 karakter.");
+      return;
+    }
+
+    form.submit();
+  });
+
+  form.addEventListener("reset", bersihkanFeedback);
+  form.addEventListener("input", bersihkanFeedback);
+});
