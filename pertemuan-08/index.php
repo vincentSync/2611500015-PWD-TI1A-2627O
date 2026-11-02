@@ -3,6 +3,54 @@ session_start();
 
    $daftarKategori = ["Akademik", "Organisasi", "Olahraga", "Seni dan Budaya", "Sosial"];
 
+   // UTS: memproses formulir Rencana Kegiatan Mahasiswa.
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["form_kegiatan"])) {
+	// Normalisasi: trim, rapikan spasi berlebih, buang karakter kontrol.
+	$bersihkan = function ($nilai) {
+		$nilai = trim((string) $nilai);
+		$nilai = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/', '', $nilai);
+		return preg_replace('/[ \t]+/', ' ', $nilai);
+	};
+
+	$namaKegiatan = $bersihkan($_POST["nama_kegiatan"] ?? "");
+	$kategori = $bersihkan($_POST["kategori_kegiatan"] ?? "");
+	$tanggalPelaksanaan = $bersihkan($_POST["tanggal_pelaksanaan"] ?? "");
+	$lokasiKegiatan = $bersihkan($_POST["lokasi_kegiatan"] ?? "");
+	$deskripsiKegiatan = str_replace(["\r\n", "\r"], "\n", $bersihkan($_POST["deskripsi_kegiatan"] ?? ""));
+
+	$kesalahan = [];
+
+	if (mb_strlen($namaKegiatan) < 3 || mb_strlen($namaKegiatan) > 100) {
+		$kesalahan[] = "Nama kegiatan harus 3 sampai 100 karakter.";
+	}
+	if (!in_array($kategori, $daftarKategori, true)) {
+		$kesalahan[] = "Kategori kegiatan tidak valid.";
+	}
+	$objekTanggal = DateTime::createFromFormat("Y-m-d", $tanggalPelaksanaan);
+	if (!$objekTanggal || $objekTanggal->format("Y-m-d") !== $tanggalPelaksanaan) {
+		$kesalahan[] = "Tanggal pelaksanaan tidak valid.";
+	}
+	if (mb_strlen($lokasiKegiatan) < 3 || mb_strlen($lokasiKegiatan) > 100) {
+		$kesalahan[] = "Lokasi kegiatan harus 3 sampai 100 karakter.";
+	}
+	if (mb_strlen($deskripsiKegiatan) < 10 || mb_strlen($deskripsiKegiatan) > 300) {
+		$kesalahan[] = "Deskripsi kegiatan harus 10 sampai 300 karakter.";
+	}
+
+	if (count($kesalahan) > 0) {
+		$_SESSION["kegiatan_error"] = $kesalahan;
+	} else {
+		$_SESSION["kegiatan_nama"] = $namaKegiatan;
+		$_SESSION["kegiatan_kategori"] = $kategori;
+		$_SESSION["kegiatan_tanggal"] = $tanggalPelaksanaan;
+		$_SESSION["kegiatan_lokasi"] = $lokasiKegiatan;
+		$_SESSION["kegiatan_deskripsi"] = $deskripsiKegiatan;
+	}
+// PRG: cegah pengiriman ulang saat halaman di-refresh.
+	header("Location: index.php#rencana-kegiatan");
+	exit;
+}
+
 // P7: Memproses data formulir dan menyimpannya ke dalam session.
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$nama = trim((string) ($_POST["nama"] ?? ""));
