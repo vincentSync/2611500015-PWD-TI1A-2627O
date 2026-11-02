@@ -268,7 +268,28 @@ switch ($programStudi) {
 		<button type="reset">Batal</button>
 		<p class="form-feedback" data-form-feedback aria-live="polite"></p>
 	</form>
+   <?php if (!empty($_SESSION["kegiatan_error"])): ?>
+   	<div class="submission-result" role="alert">
+   		<p class="form-feedback-error"><strong>Data belum dapat disimpan:</strong></p>
+   		<ul>
+   			<?php foreach ($_SESSION["kegiatan_error"] as $pesanError): ?>
+   				<li class="form-feedback-error"><?= htmlspecialchars($pesanError, ENT_QUOTES, "UTF-8") ?></li>
+   			<?php endforeach; ?>
+   		</ul>
+   	</div>
+   	<?php unset($_SESSION["kegiatan_error"]); ?>
+   <?php endif; ?>
 
+   <?php if (isset($_SESSION["kegiatan_nama"])): ?>
+   	<article id="hasilKegiatan" class="submission-result" aria-live="polite">
+   		<h3>Rencana Kegiatan yang Dikirim</h3>
+   		<p><strong>Nama Kegiatan:</strong> <?= htmlspecialchars($_SESSION["kegiatan_nama"], ENT_QUOTES, "UTF-8") ?></p>
+   		<p><strong>Kategori:</strong> <?= htmlspecialchars($_SESSION["kegiatan_kategori"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+   		<p><strong>Tanggal Pelaksanaan:</strong> <?= htmlspecialchars($_SESSION["kegiatan_tanggal"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+   		<p><strong>Lokasi:</strong> <?= htmlspecialchars($_SESSION["kegiatan_lokasi"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+   		<p><strong>Deskripsi:</strong> <?= nl2br(htmlspecialchars($_SESSION["kegiatan_deskripsi"] ?? "", ENT_QUOTES, "UTF-8")) ?></p>
+   	</article>
+   <?php endif; ?>
 </section>
 
 		<section id="contact">
