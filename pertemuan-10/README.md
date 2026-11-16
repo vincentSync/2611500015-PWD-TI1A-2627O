@@ -6,3 +6,4 @@
 4. mengidentifikasi 8 data formulir kontak di index.php beserta atribut name dan jenis input-nya: nama (text), email (email), semester (number), tanggal (date), jenis_pesan (radio), minat[] (checkbox), prodi (select), dan pesan (textarea)
 5. menentukan data yang akan disimpan ke basis data, yaitu hanya 8 data dari formulir kontak. data profil seperti nim, nama mahasiswa, dan program studi di bagian profil tidak ikut disimpan karena bukan data yang dikirim lewat formulir
 6. memeriksa checkbox minat dan memastikan keduanya memakai name="minat[]" dengan nilai HTML dan CSS. karena hanya memakai satu tabel, pilihan minat akan disimpan dalam satu kolom sebagai teks dipisah koma, contohnya HTML, CSS
+7. menentukan nama basis data dan nama tabel sesuai pola pada modul, yaitu db_pwd_2611500015 dan tbl_kontak_2611500015
