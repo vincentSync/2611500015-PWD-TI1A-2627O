@@ -9,3 +9,4 @@
 7. menentukan nama basis data dan nama tabel sesuai pola pada modul, yaitu db_pwd_2611500015 dan tbl_kontak_2611500015
 8. merancang atribut dan tipe data tabel berdasarkan 8 data formulir: nama (VARCHAR(50)), email (VARCHAR(255)), semester (TINYINT), tanggal (DATE), jenis_pesan (VARCHAR(20)), minat (VARCHAR(50)), prodi (VARCHAR(2)), dan pesan (VARCHAR(300))
 9. menentukan atribut id bertipe INT sebagai primary key dengan AUTO_INCREMENT agar nilainya bertambah otomatis dan setiap data punya identitas unik
+10. memeriksa rancangan akhir tabel yang terdiri dari 9 atribut (id dan 8 atribut dari formulir), memastikan seluruh data formulir sudah terwakili, tipe data sesuai, dan hanya id yang menjadi primary key dengan AUTO_INCREMENT
