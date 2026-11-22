@@ -20,3 +20,4 @@
 18. mempelajari perintah SQL INSERT sebagai alternatif tab Insert, lalu menjalankannya di tab SQL dengan data contoh dan memastikan data berhasil ditambahkan, id tidak dicantumkan karena dibuat otomatis oleh AUTO_INCREMENT
 19. membuka tab Browse dan memeriksa data yang tersimpan, memastikan id terbentuk otomatis, nilai setiap atribut sesuai dengan data yang dimasukkan, dan kolom minat tampil sebagai teks
 20. memeriksa kesesuaian seluruh data dengan ketentuan formulir P9 dan memastikan tidak ada ketidaksesuaian
+21. menentukan pengaturan ekspor pada basis data db_pwd_2611500015 dengan Export method Quick dan format SQL
