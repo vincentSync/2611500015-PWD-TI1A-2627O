@@ -16,3 +16,4 @@
 14. mengisi 9 kolom tabel sesuai rancangan (id, nama, email, semester, tanggal, jenis_pesan, minat, prodi, pesan), memilih PRIMARY pada index dan mencentang A_I untuk id, lalu menyimpan tabel dan memeriksa hasilnya pada tab Structure
 15. mempelajari perintah SQL CREATE DATABASE, USE, dan CREATE TABLE sebagai bentuk SQL dari pembuatan basis data dan tabel yang sudah dilakukan lewat phpmyadmin, lalu mencocokkan nama basis data, nama tabel, dan 9 atribut dengan struktur tabel yang dibuat
 16. memeriksa struktur tabel lewat tab Structure dan perintah DESCRIBE, dan memastikan 9 atribut sesuai rancangan, id memiliki PRIMARY KEY dan AUTO_INCREMENT
+17. memasukkan data awal lewat tab Insert dengan mengisi nama, email, semester, tanggal, jenis_pesan, minat, prodi, dan pesan, membiarkan id kosong, lalu memeriksa lewat Browse bahwa data tersimpan dan id terbentuk otomatis
