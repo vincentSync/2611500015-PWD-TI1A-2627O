@@ -22,3 +22,4 @@
 20. memeriksa kesesuaian seluruh data dengan ketentuan formulir P9 dan memastikan tidak ada ketidaksesuaian
 21. menentukan pengaturan ekspor pada basis data db_pwd_2611500015 dengan Export method Quick dan format SQL
 22. mengekspor basis data ke berkas db_pwd_2611500015.sql lalu memindahkannya ke folder pertemuan-10
+23. membuka berkas db_pwd_2611500015.sql di VS Code, memeriksa bahwa CREATE TABLE dan INSERT INTO ada, dan mencocokkan nama tabel, 9 atribut, serta data dengan struktur tabel dan hasil Browse
