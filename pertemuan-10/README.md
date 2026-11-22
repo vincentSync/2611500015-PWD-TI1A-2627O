@@ -11,4 +11,5 @@
 9. menentukan atribut id bertipe INT sebagai primary key dengan AUTO_INCREMENT agar nilainya bertambah otomatis dan setiap data punya identitas unik
 10. memeriksa rancangan akhir tabel yang terdiri dari 9 atribut (id dan 8 atribut dari formulir), memastikan seluruh data formulir sudah terwakili, tipe data sesuai, dan hanya id yang menjadi primary key dengan AUTO_INCREMENT
 11. membuka phpmyadmin dan memastikan tampilannya dapat dibuka dan terhubung dengan layanan MySQL
-12. membuat basis data db_pwd_0344300002 lewat menu Databases dengan collation bawaan, lalu memastikan basis data muncul pada daftar basis data
+12. membuat basis data db_pwd_2611500015 lewat menu Databases dengan collation bawaan, lalu memastikan basis data muncul pada daftar basis data
+13. memilih basis data db_pwd_2611500015, mengisi nama tabel tbl_kontak_2611500015 dengan jumlah kolom 9, lalu memastikan formulir pembuatan tabel menampilkan nama tabel yang benar dan 9 kolom untuk diisi
