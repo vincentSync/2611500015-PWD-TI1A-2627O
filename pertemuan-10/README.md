@@ -18,3 +18,4 @@
 16. memeriksa struktur tabel lewat tab Structure dan perintah DESCRIBE, dan memastikan 9 atribut sesuai rancangan, id memiliki PRIMARY KEY dan AUTO_INCREMENT
 17. memasukkan data awal lewat tab Insert dengan mengisi nama, email, semester, tanggal, jenis_pesan, minat, prodi, dan pesan, membiarkan id kosong, lalu memeriksa lewat Browse bahwa data tersimpan dan id terbentuk otomatis
 18. mempelajari perintah SQL INSERT sebagai alternatif tab Insert, lalu menjalankannya di tab SQL dengan data contoh dan memastikan data berhasil ditambahkan, id tidak dicantumkan karena dibuat otomatis oleh AUTO_INCREMENT
+19. membuka tab Browse dan memeriksa data yang tersimpan, memastikan id terbentuk otomatis, nilai setiap atribut sesuai dengan data yang dimasukkan, dan kolom minat tampil sebagai teks
