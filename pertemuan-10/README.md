@@ -13,3 +13,4 @@
 11. membuka phpmyadmin dan memastikan tampilannya dapat dibuka dan terhubung dengan layanan MySQL
 12. membuat basis data db_pwd_2611500015 lewat menu Databases dengan collation bawaan, lalu memastikan basis data muncul pada daftar basis data
 13. memilih basis data db_pwd_2611500015, mengisi nama tabel tbl_kontak_2611500015 dengan jumlah kolom 9, lalu memastikan formulir pembuatan tabel menampilkan nama tabel yang benar dan 9 kolom untuk diisi
+14. mengisi 9 kolom tabel sesuai rancangan (id, nama, email, semester, tanggal, jenis_pesan, minat, prodi, pesan), memilih PRIMARY pada index dan mencentang A_I untuk id, lalu menyimpan tabel dan memeriksa hasilnya pada tab Structure
