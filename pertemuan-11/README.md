@@ -4,3 +4,4 @@
 2. Menjalankan Laragon, Apache dan MySQL aktif, pertemuan-11 bisa diakses di browser.
 3. Database db_pwd_NIM dan tabel tbl_kontak_NIM tersedia, 9 kolom lengkap, berisi 2 baris data.
 4. Membuat berkas baru dengan nama 'koneksi.php'.
+5. Menulis parameter koneksi di koneksi.php: host localhost, user root, password kosong, database db_pwd_2611500015.
