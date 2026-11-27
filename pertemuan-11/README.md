@@ -3,3 +3,4 @@
 1. Menyalin berkas pertemuan-10 ke pertemuan-11 sebagai baseline. Halaman tampil normal.
 2. Menjalankan Laragon, Apache dan MySQL aktif, pertemuan-11 bisa diakses di browser.
 3. Database db_pwd_NIM dan tabel tbl_kontak_NIM tersedia, 9 kolom lengkap, berisi 2 baris data.
+4. Membuat berkas baru dengan nama 'koneksi.php'.
