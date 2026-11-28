@@ -12,3 +12,4 @@
 10. Tahap koneksi selesai: koneksi.php berisi kode akhir yang benar dan uji_koneksi.php sudah dihapus.
 11. Memahami require_once("koneksi.php") untuk memuat koneksi ke index.php. koneksi.php sejajar dengan index.php.
 12. Memuat fungsi.php dan koneksi.php di bagian atas index.php dengan require_once(), session_start() dimatikan.
+13. Memeriksa alur: koneksi.php dimuat di awal index.php, pemeriksaan kegagalan koneksi tetap di koneksi.php.
