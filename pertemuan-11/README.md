@@ -19,3 +19,4 @@
 17. Menjalankan kueri dengan mysqli_query($koneksi, $sql), hasilnya disimpan di $hasil.
 18. Menambahkan pemeriksaan if (!$hasil). Uji dengan tabel tbl_tabel_tidak_tersedia memunculkan "Kueri SELECT gagal dijalankan.". Setelah selesai dikembalikan ke tbl_kontak_2611500015, halaman normal.
 19. Mengambil seluruh baris hasil kueri dengan while + mysqli_fetch_assoc() ke dalam larik $dataKontak.
+20. Memeriksa $dataKontak dengan var_dump(): berisi 2 baris, setiap baris punya 9 indeks sesuai kolom tabel. Kode var_dump() lalu dijadikan komentar.
