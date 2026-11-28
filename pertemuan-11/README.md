@@ -14,3 +14,4 @@
 12. Memuat fungsi.php dan koneksi.php di bagian atas index.php dengan require_once(), session_start() dimatikan.
 13. Memeriksa alur: koneksi.php dimuat di awal index.php, pemeriksaan kegagalan koneksi tetap di koneksi.php.
 14. Menguji halaman utama pertemuan-11 di browser, halaman tampil normal tanpa pesan "Koneksi ke basis data gagal.".
+15. Tahap integrasi selesai: index.php memuat koneksi.php dan halaman utama dapat diakses.
