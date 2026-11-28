@@ -20,3 +20,5 @@
 18. Menambahkan pemeriksaan if (!$hasil). Uji dengan tabel tbl_tabel_tidak_tersedia memunculkan "Kueri SELECT gagal dijalankan.". Setelah selesai dikembalikan ke tbl_kontak_2611500015, halaman normal.
 19. Mengambil seluruh baris hasil kueri dengan while + mysqli_fetch_assoc() ke dalam larik $dataKontak.
 20. Memeriksa $dataKontak dengan var_dump(): berisi 2 baris, setiap baris punya 9 indeks sesuai kolom tabel. Kode var_dump() lalu dijadikan komentar.
+21. Mengganti tampilan data session dengan data dari database menggunakan foreach, bersihkan(), dan nl2br() untuk pesan. Semua data (2 baris) tampil sesuai tabel.
+22. Menguji tabel kosong (TRUNCATE), muncul "Belum ada data kontak yang tersimpan.". Data awal lalu dimasukkan kembali dan tampil lagi.
