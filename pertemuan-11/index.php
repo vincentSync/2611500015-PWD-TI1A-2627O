@@ -9,6 +9,11 @@ require_once("koneksi.php");
 $sql = "SELECT * FROM tbl_kontak_2611500015";
 $hasil = mysqli_query($koneksi, $sql);
 
+// P11: Memeriksa keberhasilan kueri SELECT.
+if (!$hasil) {
+die("Kueri SELECT gagal dijalankan.");
+}
+
 // P9: Memproses data formulir dan menyimpannya ke dalam session.
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$nama = trim((string) ($_POST["nama"] ?? ""));
