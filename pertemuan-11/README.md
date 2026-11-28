@@ -22,3 +22,4 @@
 20. Memeriksa $dataKontak dengan var_dump(): berisi 2 baris, setiap baris punya 9 indeks sesuai kolom tabel. Kode var_dump() lalu dijadikan komentar.
 21. Mengganti tampilan data session dengan data dari database menggunakan foreach, bersihkan(), dan nl2br() untuk pesan. Semua data (2 baris) tampil sesuai tabel.
 22. Menguji tabel kosong (TRUNCATE), muncul "Belum ada data kontak yang tersimpan.". Data awal lalu dimasukkan kembali dan tampil lagi.
+23. Mengekspor database db_pwd_NIM lewat phpMyAdmin (Export → Quick → SQL), berkas disimpan sebagai db_pwd_nim.sql di pertemuan-11.
