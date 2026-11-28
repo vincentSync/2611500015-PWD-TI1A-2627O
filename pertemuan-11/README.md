@@ -11,3 +11,4 @@
 9. Menguji kegagalan koneksi dengan database db_tidak_tersedia, muncul pesan "Koneksi ke basis data gagal.". Setelah dikembalikan ke db_pwd_NIM, pesan gagal tidak muncul lagi.
 10. Tahap koneksi selesai: koneksi.php berisi kode akhir yang benar dan uji_koneksi.php sudah dihapus.
 11. Memahami require_once("koneksi.php") untuk memuat koneksi ke index.php. koneksi.php sejajar dengan index.php.
+12. Memuat fungsi.php dan koneksi.php di bagian atas index.php dengan require_once(), session_start() dimatikan.
