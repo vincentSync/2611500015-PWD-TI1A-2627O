@@ -15,3 +15,4 @@
 13. Memeriksa alur: koneksi.php dimuat di awal index.php, pemeriksaan kegagalan koneksi tetap di koneksi.php.
 14. Menguji halaman utama pertemuan-11 di browser, halaman tampil normal tanpa pesan "Koneksi ke basis data gagal.".
 15. Tahap integrasi selesai: index.php memuat koneksi.php dan halaman utama dapat diakses.
+16. Menulis kueri SELECT \* FROM tbl_kontak_NIM di index.php setelah koneksi.php dimuat.
