@@ -8,3 +8,4 @@
 6. Menambahkan mysqli_report(MYSQLI_REPORT_OFF) agar kegagalan diperiksa sendiri dengan if.
 7. Membuat koneksi dengan mysqli_connect() dan memeriksa kegagalan dengan if (!$koneksi) + die().
 8. Menguji koneksi dengan berkas sementara uji_koneksi.php, muncul pesan "Koneksi ke basis data berhasil.", lalu berkas uji dihapus.
+9. Menguji kegagalan koneksi dengan database db_tidak_tersedia, muncul pesan "Koneksi ke basis data gagal.". Setelah dikembalikan ke db_pwd_NIM, pesan gagal tidak muncul lagi.
