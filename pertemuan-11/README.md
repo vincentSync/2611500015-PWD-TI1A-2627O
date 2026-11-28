@@ -6,3 +6,4 @@
 4. Membuat berkas baru dengan nama 'koneksi.php'.
 5. Menulis parameter koneksi di koneksi.php: host localhost, user root, password kosong, database db_pwd_2611500015.
 6. Menambahkan mysqli_report(MYSQLI_REPORT_OFF) agar kegagalan diperiksa sendiri dengan if.
+7. Membuat koneksi dengan mysqli_connect() dan memeriksa kegagalan dengan if (!$koneksi) + die().
